@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8353AE72-5102-48D1-87C8-3BF841BDB017}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ThucTapChuyenMon</RootNamespace>
+    <AssemblyName>ThucTapChuyenMon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>C:\Users\tuyet\OneDrive\Máy tính\QuanLyUtc2MilkTea - Copy\packages\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\..\..\Downloads\Zen.Barcode.Core_\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.5\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChucVu.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTDoUong.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTHoaDon.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTPhieuNhap.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTPhieuXuat.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DangNhap.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoUong.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CTDoUong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CTDoUong.Designer.cs">
+      <DependentUpon>Form_CTDoUong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CTLoaiDoUong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CTLoaiDoUong.Designer.cs">
+      <DependentUpon>Form_CTLoaiDoUong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_QuetMaBarCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_QuetMaBarCode.Designer.cs">
+      <DependentUpon>Form_QuetMaBarCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="From_ThemKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="From_ThemKhachHang.Designer.cs">
+      <DependentUpon>From_ThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function_Result.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiDoUong.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiKhachHang.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetroFramework\MetroMessageBox.cs" />
+    <Compile Include="NguyenLieu.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="page_banhang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_banhang.Designer.cs">
+      <DependentUpon>page_banhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="page_douong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_douong.Designer.cs">
+      <DependentUpon>page_douong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="page_hethong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_hethong.Designer.cs">
+      <DependentUpon>page_hethong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="page_khachhang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_khachhang.Designer.cs">
+      <DependentUpon>page_khachhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Page_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Page_Main.Designer.cs">
+      <DependentUpon>Page_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="page_nhanvien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_nhanvien.Designer.cs">
+      <DependentUpon>page_nhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="page_quanlikho.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_quanlikho.Designer.cs">
+      <DependentUpon>page_quanlikho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="page_thongke.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="page_thongke.Designer.cs">
+      <DependentUpon>page_thongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhap.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuat.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QUANLITRASUA.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUANLITRASUA.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUANLITRASUA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUANLITRASUA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Uudai.cs">
+      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CTDoUong.resx">
+      <DependentUpon>Form_CTDoUong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CTLoaiDoUong.resx">
+      <DependentUpon>Form_CTLoaiDoUong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_QuetMaBarCode.resx">
+      <DependentUpon>Form_QuetMaBarCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="From_ThemKhachHang.resx">
+      <DependentUpon>From_ThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="page_banhang.resx">
+      <DependentUpon>page_banhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="page_douong.resx">
+      <DependentUpon>page_douong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Page_Main.resx">
+      <DependentUpon>Page_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
+    <Content Include="QUANLITRASUA.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
+      <LastGenOutput>QUANLITRASUA.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="QUANLITRASUA.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
+      <LastGenOutput>QUANLITRASUA.cs</LastGenOutput>
+    </Content>
+    <EntityDeploy Include="QUANLITRASUA.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QUANLITRASUA.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="QUANLITRASUA.edmx.diagram">
+      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
+    </None>
+    <None Include="Resources\save %281%29.png" />
+    <None Include="Resources\mathematics.png" />
+    <None Include="Resources\trash %281%29.png" />
+    <None Include="Resources\marker %281%29.png" />
+    <None Include="Resources\add %281%291.png" />
+    <None Include="Resources\scanner.png" />
+    <None Include="Resources\money.png" />
+    <None Include="Resources\add-user.png" />
+    <None Include="Resources\add %281%29.png" />
+    <None Include="Resources\factory.png" />
+    <None Include="Resources\customer-service.png" />
+    <None Include="Resources\Investment_48px.png" />
+    <None Include="Resources\cogwheel.png" />
+    <None Include="Resources\waitress.png" />
+    <None Include="Resources\food-and-restaurant.png" />
+    <None Include="Resources\working.png" />
+    <None Include="Resources\user-experience.png" />
+    <None Include="Resources\eye.png" />
+    <None Include="Resources\no.png" />
+    <None Include="Resources\yesss.png" />
+    <None Include="Resources\lock %281%29.png" />
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
