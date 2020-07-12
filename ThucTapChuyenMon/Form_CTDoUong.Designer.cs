@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(125, 56);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -98,16 +98,16 @@
             // 
             // btnthem
             // 
-            this.btnthem.Activecolor = System.Drawing.Color.Green;
+            this.btnthem.Activecolor = System.Drawing.Color.Pink;
             this.btnthem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnthem.BackColor = System.Drawing.Color.IndianRed;
             this.btnthem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnthem.BorderRadius = 0;
             this.btnthem.ButtonText = "Thêm";
             this.btnthem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnthem.DisabledColor = System.Drawing.Color.Gray;
             this.btnthem.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnthem.Iconimage = global::ThucTapChuyenMon.Properties.Resources.add__1_;
+            this.btnthem.Iconimage = global::ThucTapChuyenMon.Properties.Resources.plus;
             this.btnthem.Iconimage_right = null;
             this.btnthem.Iconimage_right_Selected = null;
             this.btnthem.Iconimage_Selected = null;
@@ -116,16 +116,16 @@
             this.btnthem.IconRightVisible = true;
             this.btnthem.IconRightZoom = 0D;
             this.btnthem.IconVisible = true;
-            this.btnthem.IconZoom = 70D;
+            this.btnthem.IconZoom = 65D;
             this.btnthem.IsTab = false;
-            this.btnthem.Location = new System.Drawing.Point(218, 477);
+            this.btnthem.Location = new System.Drawing.Point(211, 477);
             this.btnthem.Margin = new System.Windows.Forms.Padding(5);
             this.btnthem.Name = "btnthem";
             this.btnthem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnthem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnthem.OnHoverTextColor = System.Drawing.Color.White;
             this.btnthem.selected = false;
-            this.btnthem.Size = new System.Drawing.Size(125, 44);
+            this.btnthem.Size = new System.Drawing.Size(132, 44);
             this.btnthem.TabIndex = 28;
             this.btnthem.Text = "Thêm";
             this.btnthem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,19 +137,19 @@
             // 
             this.dgvloai.AllowUserToAddRows = false;
             this.dgvloai.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvloai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvloai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvloai.BackgroundColor = System.Drawing.Color.White;
             this.dgvloai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvloai.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvloai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvloai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvloai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvloai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.size,
@@ -158,7 +158,7 @@
             this.dgvloai.DoubleBuffered = true;
             this.dgvloai.EnableHeadersVisualStyles = false;
             this.dgvloai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvloai.HeaderBgColor = System.Drawing.Color.Navy;
+            this.dgvloai.HeaderBgColor = System.Drawing.Color.IndianRed;
             this.dgvloai.HeaderForeColor = System.Drawing.Color.White;
             this.dgvloai.Location = new System.Drawing.Point(132, 173);
             this.dgvloai.Margin = new System.Windows.Forms.Padding(4);
@@ -192,13 +192,13 @@
             // xoa
             // 
             this.xoa.DataPropertyName = "xoa";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Red;
-            this.xoa.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
+            this.xoa.DefaultCellStyle = dataGridViewCellStyle3;
             this.xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.xoa.HeaderText = "   Xóa";
             this.xoa.MinimumWidth = 6;
@@ -233,14 +233,14 @@
             // 
             // btluu
             // 
-            this.btluu.Activecolor = System.Drawing.Color.Green;
+            this.btluu.Activecolor = System.Drawing.Color.Pink;
             this.btluu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btluu.BackColor = System.Drawing.Color.Transparent;
+            this.btluu.BackColor = System.Drawing.Color.IndianRed;
             this.btluu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btluu.BorderRadius = 0;
             this.btluu.ButtonText = "Lưu";
             this.btluu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btluu.DisabledColor = System.Drawing.Color.Gray;
+            this.btluu.DisabledColor = System.Drawing.Color.DimGray;
             this.btluu.Iconcolor = System.Drawing.Color.Transparent;
             this.btluu.Iconimage = global::ThucTapChuyenMon.Properties.Resources.save__1_;
             this.btluu.Iconimage_right = null;
@@ -256,8 +256,8 @@
             this.btluu.Location = new System.Drawing.Point(353, 477);
             this.btluu.Margin = new System.Windows.Forms.Padding(5);
             this.btluu.Name = "btluu";
-            this.btluu.Normalcolor = System.Drawing.Color.Transparent;
-            this.btluu.OnHovercolor = System.Drawing.Color.Transparent;
+            this.btluu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btluu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btluu.OnHoverTextColor = System.Drawing.Color.White;
             this.btluu.selected = false;
             this.btluu.Size = new System.Drawing.Size(125, 44);
@@ -266,21 +266,20 @@
             this.btluu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btluu.Textcolor = System.Drawing.Color.White;
             this.btluu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btluu.Visible = false;
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
             // bunifuFlatButton1
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Green;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Pink;
             this.bunifuFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.IndianRed;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "Thoát";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = global::ThucTapChuyenMon.Properties.Resources.no;
+            this.bunifuFlatButton1.Iconimage = global::ThucTapChuyenMon.Properties.Resources._return;
             this.bunifuFlatButton1.Iconimage_right = null;
             this.bunifuFlatButton1.Iconimage_right_Selected = null;
             this.bunifuFlatButton1.Iconimage_Selected = null;
@@ -310,6 +309,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(830, 584);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.panel1);
@@ -321,6 +321,7 @@
             this.Controls.Add(this.lbsize);
             this.Controls.Add(this.txtsize);
             this.Name = "Form_CTDoUong";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_CTDoUong";
             this.Load += new System.EventHandler(this.Form_CTDoUong_Load);
             this.panel1.ResumeLayout(false);

@@ -459,5 +459,34 @@
       <Parameter Name="size" Mode="In" Type="String" />
       <Parameter Name="gia" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="getdskhachhang" ReturnType="Collection(QUANLITRASUAModel.getdskhachhang_Result)">
+      <Parameter Name="maloai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="xuatdskhachhang" ReturnType="Collection(QUANLITRASUAModel.xuatdskhachhang_Result)">
+      <Parameter Name="maloai" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="doanhso" IsComposable="true" ReturnType="Collection(QUANLITRASUAModel.doanhso_Result)">
+      <Parameter Name="nam" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="getdskhachhang_Result">
+    <Property Type="String" Name="IdKhachHang" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenKhachHang" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DIACHI" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TenLoai" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DiemTichLuy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="xuatdskhachhang_Result">
+    <Property Type="String" Name="IdKhachHang" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="TenKhachHang" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DIACHI" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="SDT" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="TenLoai" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DiemTichLuy" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="doanhso_Result">
+    <Property Type="Int32" Name="Thang" Nullable="true" />
+    <Property Type="Decimal" Name="DoanhSo" Nullable="true" Precision="19" Scale="4" />
+  </ComplexType>
 </Schema>

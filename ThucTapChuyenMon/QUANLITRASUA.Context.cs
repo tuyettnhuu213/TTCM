@@ -99,5 +99,33 @@ namespace ThucTapChuyenMon
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updateCTdu", maduParameter, sizeParameter, giaParameter);
         }
+    
+        public virtual ObjectResult<getdskhachhang_Result> getdskhachhang(Nullable<int> maloai)
+        {
+            var maloaiParameter = maloai.HasValue ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getdskhachhang_Result>("getdskhachhang", maloaiParameter);
+        }
+    
+        public virtual ObjectResult<xuatdskhachhang_Result> xuatdskhachhang(Nullable<int> maloai)
+        {
+            var maloaiParameter = maloai.HasValue ?
+                new ObjectParameter("maloai", maloai) :
+                new ObjectParameter("maloai", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<xuatdskhachhang_Result>("xuatdskhachhang", maloaiParameter);
+        }
+    
+        [DbFunction("THUCTAPCHUYENMONEntities", "doanhso")]
+        public virtual IQueryable<doanhso_Result> doanhso(Nullable<int> nam)
+        {
+            var namParameter = nam.HasValue ?
+                new ObjectParameter("nam", nam) :
+                new ObjectParameter("nam", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<doanhso_Result>("[THUCTAPCHUYENMONEntities].[doanhso](@nam)", namParameter);
+        }
     }
 }

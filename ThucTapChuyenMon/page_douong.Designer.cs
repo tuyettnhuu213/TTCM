@@ -42,21 +42,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorMessage = new System.Windows.Forms.ErrorProvider(this.components);
+            this.mofile = new System.Windows.Forms.OpenFileDialog();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.btxoa = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btsua = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btthem = new Bunifu.Framework.UI.BunifuFlatButton();
             this.hinhanh = new System.Windows.Forms.PictureBox();
-            this.errorMessage = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mofile = new System.Windows.Forms.OpenFileDialog();
-            this.bunifuImageButton3 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.txtsearch = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            ((System.ComponentModel.ISupportInitialize)(this.errorMessage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorMessage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
             this.SuspendLayout();
             // 
             // lvthucdon
@@ -70,13 +73,14 @@
             this.stt,
             this.ten,
             this.Madu});
+            this.lvthucdon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvthucdon.FullRowSelect = true;
             this.lvthucdon.GridLines = true;
             this.lvthucdon.HideSelection = false;
             this.lvthucdon.Location = new System.Drawing.Point(632, 12);
             this.lvthucdon.Name = "lvthucdon";
             this.lvthucdon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lvthucdon.Size = new System.Drawing.Size(730, 614);
+            this.lvthucdon.Size = new System.Drawing.Size(712, 631);
             this.lvthucdon.TabIndex = 0;
             this.lvthucdon.UseCompatibleStateImageBehavior = false;
             this.lvthucdon.View = System.Windows.Forms.View.Details;
@@ -140,6 +144,7 @@
             // 
             // cbloai
             // 
+            this.cbloai.BackColor = System.Drawing.Color.PeachPuff;
             this.cbloai.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cbloai.FormattingEnabled = true;
             this.cbloai.Location = new System.Drawing.Point(116, 343);
@@ -151,6 +156,7 @@
             // 
             // cbsize
             // 
+            this.cbsize.BackColor = System.Drawing.Color.PeachPuff;
             this.cbsize.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cbsize.FormattingEnabled = true;
             this.cbsize.Location = new System.Drawing.Point(116, 393);
@@ -203,10 +209,43 @@
             this.label4.Text = "Giá";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // errorMessage
+            // 
+            this.errorMessage.ContainerControl = this;
+            // 
+            // mofile
+            // 
+            this.mofile.FileName = "Hình ảnh";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(201, 257);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Ảnh minh họa";
+            // 
+            // bunifuImageButton3
+            // 
+            this.bunifuImageButton3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton3.Image = global::ThucTapChuyenMon.Properties.Resources.no;
+            this.bunifuImageButton3.ImageActive = null;
+            this.bunifuImageButton3.Location = new System.Drawing.Point(421, 290);
+            this.bunifuImageButton3.Name = "bunifuImageButton3";
+            this.bunifuImageButton3.Size = new System.Drawing.Size(44, 39);
+            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton3.TabIndex = 18;
+            this.bunifuImageButton3.TabStop = false;
+            this.bunifuImageButton3.Zoom = 10;
+            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
+            // 
             // bunifuImageButton2
             // 
-            this.bunifuImageButton2.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton2.Image = global::ThucTapChuyenMon.Properties.Resources.mathematics;
+            this.bunifuImageButton2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton2.Image = global::ThucTapChuyenMon.Properties.Resources.plus;
             this.bunifuImageButton2.ImageActive = null;
             this.bunifuImageButton2.Location = new System.Drawing.Point(421, 383);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
@@ -219,8 +258,8 @@
             // 
             // bunifuImageButton1
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton1.Image = global::ThucTapChuyenMon.Properties.Resources.mathematics;
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Image = global::ThucTapChuyenMon.Properties.Resources.plus;
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(421, 338);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
@@ -233,8 +272,8 @@
             // 
             // btxoa
             // 
-            this.btxoa.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btxoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btxoa.Activecolor = System.Drawing.Color.LightPink;
+            this.btxoa.BackColor = System.Drawing.Color.IndianRed;
             this.btxoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btxoa.BorderRadius = 0;
             this.btxoa.ButtonText = "Xóa";
@@ -255,8 +294,8 @@
             this.btxoa.Location = new System.Drawing.Point(155, 629);
             this.btxoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btxoa.Name = "btxoa";
-            this.btxoa.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btxoa.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btxoa.Normalcolor = System.Drawing.Color.IndianRed;
+            this.btxoa.OnHovercolor = System.Drawing.Color.IndianRed;
             this.btxoa.OnHoverTextColor = System.Drawing.Color.White;
             this.btxoa.selected = false;
             this.btxoa.Size = new System.Drawing.Size(209, 52);
@@ -269,8 +308,8 @@
             // 
             // btsua
             // 
-            this.btsua.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btsua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btsua.Activecolor = System.Drawing.Color.LightPink;
+            this.btsua.BackColor = System.Drawing.Color.IndianRed;
             this.btsua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btsua.BorderRadius = 0;
             this.btsua.ButtonText = "Sửa";
@@ -291,8 +330,8 @@
             this.btsua.Location = new System.Drawing.Point(155, 562);
             this.btsua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btsua.Name = "btsua";
-            this.btsua.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btsua.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btsua.Normalcolor = System.Drawing.Color.IndianRed;
+            this.btsua.OnHovercolor = System.Drawing.Color.IndianRed;
             this.btsua.OnHoverTextColor = System.Drawing.Color.White;
             this.btsua.selected = false;
             this.btsua.Size = new System.Drawing.Size(209, 59);
@@ -305,8 +344,8 @@
             // 
             // btthem
             // 
-            this.btthem.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btthem.Activecolor = System.Drawing.Color.LightPink;
+            this.btthem.BackColor = System.Drawing.Color.IndianRed;
             this.btthem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btthem.BorderRadius = 0;
             this.btthem.ButtonText = "Thêm";
@@ -327,8 +366,8 @@
             this.btthem.Location = new System.Drawing.Point(155, 495);
             this.btthem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btthem.Name = "btthem";
-            this.btthem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btthem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btthem.Normalcolor = System.Drawing.Color.IndianRed;
+            this.btthem.OnHovercolor = System.Drawing.Color.IndianRed;
             this.btthem.OnHoverTextColor = System.Drawing.Color.White;
             this.btthem.selected = false;
             this.btthem.Size = new System.Drawing.Size(209, 59);
@@ -341,7 +380,7 @@
             // 
             // hinhanh
             // 
-            this.hinhanh.BackColor = System.Drawing.Color.SeaGreen;
+            this.hinhanh.BackColor = System.Drawing.Color.IndianRed;
             this.hinhanh.Location = new System.Drawing.Point(135, 12);
             this.hinhanh.Name = "hinhanh";
             this.hinhanh.Size = new System.Drawing.Size(258, 233);
@@ -350,43 +389,49 @@
             this.hinhanh.TabStop = false;
             this.hinhanh.Click += new System.EventHandler(this.hinhanh_Click);
             // 
-            // errorMessage
+            // bunifuImageButton4
             // 
-            this.errorMessage.ContainerControl = this;
+            this.bunifuImageButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuImageButton4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton4.Image = global::ThucTapChuyenMon.Properties.Resources.search__1_;
+            this.bunifuImageButton4.ImageActive = null;
+            this.bunifuImageButton4.Location = new System.Drawing.Point(1283, 654);
+            this.bunifuImageButton4.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuImageButton4.Name = "bunifuImageButton4";
+            this.bunifuImageButton4.Size = new System.Drawing.Size(61, 36);
+            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton4.TabIndex = 20;
+            this.bunifuImageButton4.TabStop = false;
+            this.bunifuImageButton4.Zoom = 15;
+            this.bunifuImageButton4.Click += new System.EventHandler(this.bunifuImageButton4_Click);
             // 
-            // mofile
+            // txtsearch
             // 
-            this.mofile.FileName = "Hình ảnh";
-            // 
-            // bunifuImageButton3
-            // 
-            this.bunifuImageButton3.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton3.Image = global::ThucTapChuyenMon.Properties.Resources.no;
-            this.bunifuImageButton3.ImageActive = null;
-            this.bunifuImageButton3.Location = new System.Drawing.Point(421, 290);
-            this.bunifuImageButton3.Name = "bunifuImageButton3";
-            this.bunifuImageButton3.Size = new System.Drawing.Size(44, 39);
-            this.bunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton3.TabIndex = 18;
-            this.bunifuImageButton3.TabStop = false;
-            this.bunifuImageButton3.Zoom = 10;
-            this.bunifuImageButton3.Click += new System.EventHandler(this.bunifuImageButton3_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(201, 257);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 20);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Ảnh minh họa";
+            this.txtsearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtsearch.BorderColorFocused = System.Drawing.Color.CornflowerBlue;
+            this.txtsearch.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtsearch.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtsearch.BorderThickness = 3;
+            this.txtsearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtsearch.ForeColor = System.Drawing.Color.Gray;
+            this.txtsearch.isPassword = false;
+            this.txtsearch.Location = new System.Drawing.Point(632, 657);
+            this.txtsearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(642, 32);
+            this.txtsearch.TabIndex = 21;
+            this.txtsearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtsearch.OnValueChanged += new System.EventHandler(this.txtsearch_OnValueChanged);
+            this.txtsearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtsearch_KeyDown);
             // 
             // page_douong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
+            this.Controls.Add(this.bunifuImageButton4);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.bunifuImageButton3);
             this.Controls.Add(this.bunifuImageButton2);
@@ -405,13 +450,14 @@
             this.Controls.Add(this.hinhanh);
             this.Controls.Add(this.lvthucdon);
             this.Name = "page_douong";
-            this.Size = new System.Drawing.Size(1383, 725);
+            this.Size = new System.Drawing.Size(1365, 706);
             this.Load += new System.EventHandler(this.page_douong_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorMessage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hinhanh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorMessage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -442,5 +488,7 @@
         private System.Windows.Forms.OpenFileDialog mofile;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton3;
         private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtsearch;
     }
 }

@@ -333,6 +333,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="doanhso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nam" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Thang" Type="int" />
+          <Property Name="DoanhSo" Type="money" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
   <Function Name="Function" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <ReturnType>
       <CollectionType>
@@ -357,6 +368,9 @@
     <Parameter Name="madu" Type="int" Mode="In" />
     <Parameter Name="size" Type="varchar" Mode="In" />
     <Parameter Name="gia" Type="int" Mode="In" />
+  </Function>
+  <Function Name="xuatdskhachhang" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maloai" Type="int" Mode="In" />
   </Function>
   <EntityContainer Name="QUANLITRASUAModelStoreContainer">
     <EntitySet Name="ChucVu" EntityType="Self.ChucVu" Schema="dbo" store:Type="Tables" />

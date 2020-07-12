@@ -381,5 +381,77 @@ namespace ThucTapChuyenMon
         {
             load_gia(madouong, cbsize.Text);
         }
+        public string RemoveUnicode(string text)
+        {
+            string[] arr1 = new string[] { "á", "à", "ả", "ã", "ạ", "â", "ấ", "ầ", "ẩ", "ẫ", "ậ", "ă", "ắ", "ằ", "ẳ", "ẵ", "ặ",
+                                           "đ","é","è","ẻ","ẽ","ẹ","ê","ế","ề","ể","ễ","ệ","í","ì","ỉ","ĩ","ị",
+                                           "ó","ò","ỏ","õ","ọ","ô","ố","ồ","ổ","ỗ","ộ","ơ","ớ","ờ","ở","ỡ","ợ",
+                                           "ú","ù","ủ","ũ","ụ","ư","ứ","ừ","ử","ữ","ự","ý","ỳ","ỷ","ỹ","ỵ",};
+            string[] arr2 = new string[] { "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a", "a",
+                                           "d","e","e","e","e","e","e","e","e","e","e","e","i","i","i","i","i",
+                                           "o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o",
+                                           "u","u","u","u","u","u","u","u","u","u","u","y","y","y","y","y",};
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                text = text.Replace(arr1[i], arr2[i]);
+                text = text.Replace(arr1[i].ToUpper(), arr2[i].ToUpper());
+            }
+            return text;
+        }
+        public void timkiem()
+        {
+            if (txtsearch.Text == "")
+                Napdatalist();
+            lvthucdon.Groups.Clear();
+            lvthucdon.Items.Clear();
+            lvthucdon.Groups.Clear();
+            List<LoaiDoUong> ds_Loaidouong = new List<LoaiDoUong>();
+            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            {
+                ds_Loaidouong = quanli.LoaiDoUongs.ToList();
+                foreach (LoaiDoUong item in ds_Loaidouong)
+                {
+                    ListViewGroup lvl = new ListViewGroup(item.TenLoai);
+                    lvl.Tag = item.IdLoai.ToString();
+                    lvthucdon.Groups.Add(lvl);
+                }
+                foreach (ListViewGroup lvl in lvthucdon.Groups)
+                {
+                    int stt = 1;
+                    int maloai = Int32.Parse(lvl.Tag.ToString());
+                    List<DoUong> ds_douong = quanli.DoUongs.Where(p => p.IdLoai == maloai).ToList();
+                    foreach (DoUong item in ds_douong)
+                    {
+                        if (RemoveUnicode(item.TenDoUong.ToLower()).Contains(RemoveUnicode(txtsearch.Text.ToLower())))
+                        {
+                            ListViewItem lvi = new ListViewItem(item.IdLoai.ToString());
+                            lvi.SubItems.Add(stt + "");
+                            lvi.SubItems.Add(item.TenDoUong);
+                            lvi.SubItems.Add(item.Id.ToString());
+                            lvthucdon.Items.Add(lvi);
+                            lvi.Group = lvl;
+                            stt++;
+                        }
+
+                    }
+                }
+            }
+        }
+    
+        private void bunifuImageButton4_Click(object sender, EventArgs e)
+        {
+
+            timkiem();
+        }
+
+        private void txtsearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            timkiem();
+        }
+
+        private void txtsearch_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

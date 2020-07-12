@@ -56,7 +56,7 @@
             this.dgvloai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvloai.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -71,7 +71,7 @@
             this.dgvloai.DoubleBuffered = true;
             this.dgvloai.EnableHeadersVisualStyles = false;
             this.dgvloai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.dgvloai.HeaderBgColor = System.Drawing.Color.Navy;
+            this.dgvloai.HeaderBgColor = System.Drawing.Color.IndianRed;
             this.dgvloai.HeaderForeColor = System.Drawing.Color.White;
             this.dgvloai.Location = new System.Drawing.Point(51, 137);
             this.dgvloai.Margin = new System.Windows.Forms.Padding(4);
@@ -123,7 +123,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(51, 32);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -145,9 +145,9 @@
             // 
             // btluu
             // 
-            this.btluu.Activecolor = System.Drawing.Color.Green;
+            this.btluu.Activecolor = System.Drawing.Color.LightPink;
             this.btluu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btluu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btluu.BackColor = System.Drawing.Color.IndianRed;
             this.btluu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btluu.BorderRadius = 0;
             this.btluu.ButtonText = "Lưu";
@@ -205,16 +205,16 @@
             // 
             // btnthem
             // 
-            this.btnthem.Activecolor = System.Drawing.Color.Green;
+            this.btnthem.Activecolor = System.Drawing.Color.LightPink;
             this.btnthem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnthem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btnthem.BackColor = System.Drawing.Color.IndianRed;
             this.btnthem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnthem.BorderRadius = 0;
             this.btnthem.ButtonText = "Thêm";
             this.btnthem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnthem.DisabledColor = System.Drawing.Color.Gray;
             this.btnthem.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnthem.Iconimage = global::ThucTapChuyenMon.Properties.Resources.add__1_;
+            this.btnthem.Iconimage = global::ThucTapChuyenMon.Properties.Resources.plus;
             this.btnthem.Iconimage_right = null;
             this.btnthem.Iconimage_right_Selected = null;
             this.btnthem.Iconimage_Selected = null;
@@ -242,16 +242,16 @@
             // 
             // bunifuFlatButton1
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Green;
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.LightPink;
             this.bunifuFlatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.IndianRed;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "Thoát";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = global::ThucTapChuyenMon.Properties.Resources.no;
+            this.bunifuFlatButton1.Iconimage = global::ThucTapChuyenMon.Properties.Resources._return;
             this.bunifuFlatButton1.Iconimage_right = null;
             this.bunifuFlatButton1.Iconimage_right_Selected = null;
             this.bunifuFlatButton1.Iconimage_Selected = null;
@@ -281,6 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(655, 520);
             this.Controls.Add(this.bunifuFlatButton1);
             this.Controls.Add(this.dgvloai);
@@ -289,6 +290,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtloai);
             this.Controls.Add(this.btnthem);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "Form_CTLoaiDoUong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_CTLoaiDoUong";

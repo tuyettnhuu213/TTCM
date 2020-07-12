@@ -173,5 +173,25 @@
     <FunctionImportMapping FunctionImportName="ThemKhachHang" FunctionName="QUANLITRASUAModel.Store.ThemKhachHang" />
     <FunctionImportMapping FunctionImportName="themloaidouong" FunctionName="QUANLITRASUAModel.Store.themloaidouong" />
     <FunctionImportMapping FunctionImportName="updateCTdu" FunctionName="QUANLITRASUAModel.Store.updateCTdu" />
+    <FunctionImportMapping FunctionImportName="xuatdskhachhang" FunctionName="QUANLITRASUAModel.Store.xuatdskhachhang">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QUANLITRASUAModel.xuatdskhachhang_Result">
+          <ScalarProperty Name="IdKhachHang" ColumnName="IdKhachHang" />
+          <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+          <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+          <ScalarProperty Name="SDT" ColumnName="SDT" />
+          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+          <ScalarProperty Name="DiemTichLuy" ColumnName="DiemTichLuy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="doanhso" FunctionName="QUANLITRASUAModel.Store.doanhso">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="QUANLITRASUAModel.doanhso_Result">
+          <ScalarProperty Name="Thang" ColumnName="Thang" />
+          <ScalarProperty Name="DoanhSo" ColumnName="DoanhSo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

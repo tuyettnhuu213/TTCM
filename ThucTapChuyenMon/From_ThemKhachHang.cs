@@ -16,7 +16,14 @@ namespace ThucTapChuyenMon
         {
             InitializeComponent();
         }
-        
+        private string username;
+        public string Username { get => username; set => username = value; }
+        public From_ThemKhachHang(string username)
+        {
+            InitializeComponent();
+            Username = username;
+        }
+
         private void From_ThemKhachHang_Load(object sender, EventArgs e)
         {
             using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
@@ -63,9 +70,20 @@ namespace ThucTapChuyenMon
                 using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
                 {
 
-                    quanli.ThemKhachHang(txtmakhachhang.Text, txttenkhachhang.Text, txtsdt.Text, txtsdt.Text, txtemail.Text);
+                    KhachHang kh = new KhachHang();
+                    kh.DIACHI = txtdiachi.Text;
+                    kh.IdKhachHang = txtmakhachhang.Text;
+                    kh.TenKhachHang = txttenkhachhang.Text;
+                    kh.NgayLapThe = DateTime.Now;
+                    kh.SDT = txtsdt.Text;
+                    kh.Email = txtemail.Text;
+                    kh.DiemTichLuy = 0;
+                    kh.IdLoai = 1;
+                    quanli.KhachHangs.Add(kh);
                     quanli.SaveChanges();
                     MessageBox.Show("Thành công");
+                    page_banhang bh = new page_banhang(username, txtmakhachhang.Text);
+                    bh.Show();
                     this.Close();
 
                 }
@@ -77,9 +95,13 @@ namespace ThucTapChuyenMon
         {
             if(MessageBox.Show("Bạn thật sự muốn thoát? ","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
+          
+                page_banhang bh = new page_banhang(username, txtmakhachhang.Text);  
+                bh.Show();
                 this.Close();
-            }    
-            
+            }
+           
+
         }
     }
 }

@@ -16,6 +16,10 @@ namespace ThucTapChuyenMon
         {
             InitializeComponent();
         }
+        public Bunifu.Framework.UI.BunifuFlatButton getNguyenLieu()
+        {
+            return btnquanlikho;
+        }
         public void getID(string a)
         {
             label1.Text = a;
@@ -23,8 +27,8 @@ namespace ThucTapChuyenMon
         private void Page_Main_Load(object sender, EventArgs e)
         {
             phanquyen();
+            loadcanhbao();
             btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.Transparent;
             btnthucdon.BackColor = Color.Transparent;
             btnquanlikho.BackColor = Color.Transparent;
             btnnhanvien.BackColor = Color.Transparent;
@@ -35,18 +39,48 @@ namespace ThucTapChuyenMon
 
         }
 
+        private void loadcanhbao()
+        {
+            int dem = 0;
+            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            {
+                List<NguyenLieu> ds_nguyenlieu = quanli.NguyenLieux.ToList();
+                foreach (var item in ds_nguyenlieu)
+                {
+
+                    if (item.SoLuong <= 5)
+                    {
+                        dem++;
+
+                    }
+                }
+            }
+            if (dem == 0)
+            {
+                error.Clear();
+
+            }
+            else
+            {
+
+                error.SetError(btnquanlikho, "Co" + dem + " nguyen lieu sap het");
+
+
+            }
+        }
+
         private void btntrangchu_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
             page_banhang trangchu = new page_banhang();
             panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.SeaGreen;
-            btnhethong.BackColor = Color.Transparent;
-            btnthucdon.BackColor = Color.Transparent;
-            btnquanlikho.BackColor = Color.Transparent;
-            btnnhanvien.BackColor = Color.Transparent;
-            btnthongke.BackColor = Color.Transparent;
-            btnkhachhang.BackColor = Color.Transparent;
+            btntrangchu.Normalcolor = Color.IndianRed;
+            btnthucdon.Normalcolor = Color.Transparent;
+            btnnhanvien.Normalcolor = Color.Transparent;
+            btnquanlikho.Normalcolor = Color.Transparent;
+            btnkhachhang.Normalcolor = Color.Transparent;
+            btnthongke.Normalcolor = Color.Transparent;
+
            
         }
 
@@ -55,13 +89,12 @@ namespace ThucTapChuyenMon
             panel2.Controls.Clear();
             page_douong trangchu = new page_douong();
             panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.Transparent;
-            btnthucdon.BackColor = Color.SeaGreen;
-            btnquanlikho.BackColor = Color.Transparent;
-            btnnhanvien.BackColor = Color.Transparent;
-            btnthongke.BackColor = Color.Transparent;
-            btnkhachhang.BackColor = Color.Transparent;
+            btntrangchu.Normalcolor = Color.Transparent;
+            btnthucdon.Normalcolor = Color.IndianRed;
+            btnnhanvien.Normalcolor = Color.Transparent;
+            btnquanlikho.Normalcolor = Color.Transparent;
+            btnkhachhang.Normalcolor = Color.Transparent;
+            btnthongke.Normalcolor = Color.Transparent;
 
         }
 
@@ -70,41 +103,27 @@ namespace ThucTapChuyenMon
             panel2.Controls.Clear();
             page_nhanvien trangchu = new page_nhanvien();
             panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.Transparent;
-            btnthucdon.BackColor = Color.Transparent;
-            btnquanlikho.BackColor = Color.Transparent;
-            btnnhanvien.BackColor = Color.SeaGreen;
-            btnthongke.BackColor = Color.Transparent;
-            btnkhachhang.BackColor = Color.Transparent;
+            btntrangchu.Normalcolor = Color.Transparent;
+            btnthucdon.Normalcolor = Color.Transparent;
+            btnnhanvien.Normalcolor = Color.IndianRed;
+            btnquanlikho.Normalcolor = Color.Transparent;
+            btnkhachhang.Normalcolor = Color.Transparent;
+            btnthongke.Normalcolor = Color.Transparent;
         }
 
-        private void btnhethong_Click(object sender, EventArgs e)
-        {
-            panel2.Controls.Clear();
-            page_hethong trangchu = new page_hethong();
-            panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.SeaGreen;
-            btnthucdon.BackColor = Color.Transparent;
-            btnquanlikho.BackColor = Color.Transparent;
-            btnnhanvien.BackColor = Color.Transparent;
-            btnthongke.BackColor = Color.Transparent;
-            btnkhachhang.BackColor = Color.Transparent;
-        }
+       
 
         private void btnthongke_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
             page_thongke trangchu = new page_thongke();
             panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.Transparent;
-            btnthucdon.BackColor = Color.Transparent;
-            btnquanlikho.BackColor = Color.Transparent;
-            btnnhanvien.BackColor = Color.Transparent;
-            btnthongke.BackColor = Color.SeaGreen;
-            btnkhachhang.BackColor = Color.Transparent;
+            btntrangchu.Normalcolor = Color.Transparent;
+            btnthucdon.Normalcolor = Color.Transparent;
+            btnnhanvien.Normalcolor = Color.Transparent;
+            btnquanlikho.Normalcolor = Color.Transparent;
+            btnkhachhang.Normalcolor = Color.Transparent;
+            btnthongke.Normalcolor = Color.IndianRed;
         }
 
         private void btnkhachhang_Click(object sender, EventArgs e)
@@ -112,27 +131,29 @@ namespace ThucTapChuyenMon
             panel2.Controls.Clear();
             page_khachhang trangchu = new page_khachhang();
             panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.Transparent;
-            btnthucdon.BackColor = Color.Transparent;
-            btnquanlikho.BackColor = Color.Transparent;
-            btnnhanvien.BackColor = Color.Transparent;
-            btnthongke.BackColor = Color.Transparent;
-            btnkhachhang.BackColor = Color.SeaGreen;
+            btntrangchu.Normalcolor = Color.Transparent;
+            btnthucdon.Normalcolor = Color.Transparent;
+            btnnhanvien.Normalcolor = Color.Transparent;
+            btnquanlikho.Normalcolor = Color.Transparent;
+            btnkhachhang.Normalcolor = Color.IndianRed;
+            btnthongke.Normalcolor = Color.Transparent;
         }
 
         private void btnquanlikho_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            page_quanlikho trangchu = new page_quanlikho();
+            string[] username = label1.Text.Split(':');
+            page_nguyenlieu trangchu = new page_nguyenlieu(username[1],error);
+            trangchu.form = this;
             panel2.Controls.Add(trangchu);
-            btntrangchu.BackColor = Color.Transparent;
-            btnhethong.BackColor = Color.Transparent;
-            btnthucdon.BackColor = Color.Transparent;
-            btnquanlikho.BackColor = Color.SeaGreen;
-            btnnhanvien.BackColor = Color.Transparent;
-            btnthongke.BackColor = Color.Transparent;
-            btnkhachhang.BackColor = Color.Transparent;
+            //btntrangchu.BackColor = Color.Transparent;
+            btntrangchu.Normalcolor = Color.Transparent;
+            btnthucdon.Normalcolor = Color.Transparent;
+            btnnhanvien.Normalcolor = Color.Transparent;
+            btnquanlikho.Normalcolor = Color.IndianRed;
+            btnkhachhang.Normalcolor = Color.Transparent;
+            btnthongke.Normalcolor = Color.Transparent;
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -168,27 +189,15 @@ namespace ThucTapChuyenMon
                     panel2.Controls.Add(trangchu);
                     dem++;
                 }
-                if (cv.HeThong == false)
-                    btnhethong.Visible = false;
-                else
-                {
-                    if (dem == 0)
-                    {
-                        page_hethong hethong = new page_hethong();
-                       
-                        panel2.Controls.Add(hethong);
-                        dem++;
-                    }
-                }
+
                 if (cv.QuanLy == false)
                     btnnhanvien.Visible = false;
                 else
                 {
                     if (dem == 0)
                     {
-                        page_nhanvien nhanvien = new page_nhanvien();
-                      
-                        panel2.Controls.Add(nhanvien);
+                        page_nhanvien nhanvien = new page_nhanvien();                     
+                        panel2.Controls.Add(nhanvien);                 
                         dem++;
                     }
                 }
@@ -214,14 +223,10 @@ namespace ThucTapChuyenMon
                 {
                     if (dem == 0)
                     {
-                        //   page_nguyenlieu nguyenlieu = new page_nguyenlieu(username[1], erro());
+                        page_nguyenlieu nguyenlieu = new page_nguyenlieu(username[1], erro());
 
-                        // panel2.Controls.Add(nguyenlieu);
-                        // dem++;
-                        page_quanlikho nhanvien = new page_quanlikho();
-
-                        panel2.Controls.Add(nhanvien);
-                        dem++;
+                        panel2.Controls.Add(nguyenlieu);
+                        dem++;                      
                     }
                 }
                 if (cv.KhachHang == false)
@@ -236,6 +241,25 @@ namespace ThucTapChuyenMon
                         dem++;
                     }
                 }
+            }
+        }
+
+        private void btndoimatkhau_Click(object sender, EventArgs e)
+        {
+            string[] username = label1.Text.Split(':');
+            Form_DoiMatKhau doimk = new Form_DoiMatKhau(username[1]);
+            doimk.ShowDialog();
+        }
+        public ErrorProvider erro()
+        {
+            return error;
+        }
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+           if( MessageBox.Show(this, "Bạn có thật sự muốn đăng xuất !", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Restart();
+                label1.Text = "";
             }
         }
     }

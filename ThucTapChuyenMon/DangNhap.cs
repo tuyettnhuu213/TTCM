@@ -17,7 +17,7 @@ namespace ThucTapChuyenMon
         {
             InitializeComponent();
         }
-        THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities();
+      
         private void DangNhap_Load(object sender, EventArgs e)
         {
            
@@ -66,15 +66,17 @@ namespace ThucTapChuyenMon
                     txtpass.Focus();
                     return;
                 }
-            using (db)
+            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
             {
                 NhanVien lg = db.NhanViens.Where(p => p.TenDangNhap == txtname.Text && p.MatKhau == txtpass.Text.Trim()).FirstOrDefault();
                 if (lg == null)
                 {
                     MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu! \n Vui lòng kiểm tra lại !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
+                    
+                   
                 }
-                else
+                if(lg!=null)             
                 {
                     MessageBox.Show("Đăng nhập thành công");
                     Page_Main pg = new Page_Main();
@@ -117,12 +119,12 @@ namespace ThucTapChuyenMon
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            using (db)
+            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
             {
                 NhanVien lg = db.NhanViens.Where(p => p.TenDangNhap == txtname.Text && p.MatKhau == txtpass.Text.Trim()).FirstOrDefault();
                 if (lg == null)
                 {
-                    MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu! \n Vui lòng kiểm tra lại !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(this, "Sai tên đăng nhập hoặc mật khẩu! \n Vui lòng kiểm tra lại !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);             
                     return;
                 }
                 else

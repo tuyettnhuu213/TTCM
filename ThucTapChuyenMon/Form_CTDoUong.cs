@@ -98,7 +98,18 @@ namespace ThucTapChuyenMon
 
         private void btnthem_Click(object sender, EventArgs e)
         {
-            Them();     
+            if(btnthem.Text == "Làm Mới" )
+            {
+                txtgia.Text = "";
+                txtsize.Text = "";
+                txtsize.Visible = true;
+                lbsize.Visible = true;
+            }
+            else
+            {
+                Them();
+            }
+             
         }
 
         private void btluu_Click(object sender, EventArgs e)
