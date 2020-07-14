@@ -369,6 +369,12 @@
         <Function Name="themloaidouong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="tenloai" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="themsukien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tenuudai" Type="nvarchar" Mode="In" />
+          <Parameter Name="ngaybd" Type="date" Mode="In" />
+          <Parameter Name="ngaykt" Type="date" Mode="In" />
+          <Parameter Name="giamgia" Type="float" Mode="In" />
+        </Function>
         <Function Name="updateCTdu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="madu" Type="int" Mode="In" />
           <Parameter Name="size" Type="varchar" Mode="In" />
@@ -926,6 +932,12 @@
           <FunctionImport Name="doanhso" IsComposable="true" ReturnType="Collection(QUANLITRASUAModel.doanhso_Result)">
           <Parameter Name="nam" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="themsukien">
+            <Parameter Name="tenuudai" Mode="In" Type="String" />
+            <Parameter Name="ngaybd" Mode="In" Type="DateTime" />
+            <Parameter Name="ngaykt" Mode="In" Type="DateTime" />
+            <Parameter Name="giamgia" Mode="In" Type="Double" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getdskhachhang_Result">
           <Property Type="String" Name="IdKhachHang" Nullable="false" MaxLength="10" />
@@ -1145,6 +1157,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="themsukien" FunctionName="QUANLITRASUAModel.Store.themsukien" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

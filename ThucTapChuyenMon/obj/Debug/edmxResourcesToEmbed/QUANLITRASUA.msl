@@ -193,5 +193,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="themsukien" FunctionName="QUANLITRASUAModel.Store.themsukien" />
   </EntityContainerMapping>
 </Mapping>

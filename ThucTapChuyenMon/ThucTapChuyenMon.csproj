@@ -558,6 +558,8 @@
     <None Include="Resources\f6af7a929f6a1f15734a656c8b173d5a.jpg" />
     <None Include="Resources\Untitled.png" />
     <None Include="Resources\reset.png" />
+    <None Include="Resources\gift.png" />
+    <None Include="Resources\giftt.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

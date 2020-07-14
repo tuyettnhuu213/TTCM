@@ -40,6 +40,7 @@ namespace ThucTapChuyenMon
         {
             loadkhachhang();
             loadloaithe();
+            loadsukien();
             btnHuy.IconVisible = true;
             btnSua.IconVisible = true;
             btnView.IconVisible = true;
@@ -136,8 +137,22 @@ namespace ThucTapChuyenMon
             if (txtMa.Text != "")
 
             {
-                //try
-                //{
+                try
+                {
+                    float.Parse(txtgiamud.Text);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Mục giảm giá nhập sai kiểu dữ liệu. Hãy nhập số thực (Vd:0.1)");
+                    return;
+                }
+                if (txtDTT.Text == "" || txtGiamGia.Text == "")
+                {
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin");
+                    return;
+                }
+                else
+                {
                     using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
                     {
 
@@ -148,13 +163,7 @@ namespace ThucTapChuyenMon
                         MessageBox.Show("Cập nhật thành công");
                         loadloaithe();
                     }
-                //} catch (Exception)
-                //{
-                //    MessageBox.Show("Đang sử dụng. Không thể sửa");
-                //    return;
-                //}
-                
-
+                }
             }
             else
             {
@@ -230,10 +239,7 @@ namespace ThucTapChuyenMon
 
         private void txtGiamGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            
         }
 
         private void txtDTT_KeyPress(object sender, KeyPressEventArgs e)
@@ -242,6 +248,150 @@ namespace ThucTapChuyenMon
             {
                 e.Handled = true;
             }
+        }
+        public void loadsukien()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("IdUuDai");
+            table.Columns.Add("TenUuDai");
+            table.Columns.Add("NgayBatDau");
+            table.Columns.Add("NgayKetThuc");
+            table.Columns.Add("GiamGia");
+            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            {
+                List<Uudai> ds_uudai = quanli.Uudais.ToList();
+               foreach( var item in ds_uudai)
+                {
+                    table.Rows.Add(item.IdUuDai, item.TenUuDai, item.NgayBatDau, item.NgayKetThuc, item.GiamGia);
+                }    
+            }
+            dgvuudai.DataSource = table;
+
+        }
+        private void tabNavigationPage3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvuudai_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            String mauudai = dgvuudai.Rows[e.RowIndex].Cells["IdUuDai"].Value.ToString();
+            if (e.ColumnIndex == 0)
+            {
+                txttenud.Enabled = true;
+                dtngaykt.Enabled = true;
+                dtngaybd.Enabled = true;
+                txtgiamud.Enabled = true;
+                txtidud.Text = mauudai;
+                txttenud.Text = dgvuudai.Rows[e.RowIndex].Cells["TenUuDai"].Value.ToString();
+                dtngaybd.Value = Convert.ToDateTime( dgvuudai.Rows[e.RowIndex].Cells["NgayBatDau"].Value.ToString());
+                dtngaykt.Value = Convert.ToDateTime(dgvuudai.Rows[e.RowIndex].Cells["NgayKetThuc"].Value.ToString());
+                txtgiamud.Text = dgvuudai.Rows[e.RowIndex].Cells["Giam"].Value.ToString();
+                btnthemud.Text = "Làm mới";
+            }
+            if (e.ColumnIndex == 1)
+            {
+               if(MessageBox.Show("Bạn có muốn xóa sự kiện này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
+                {
+                    using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                    {
+                        Uudai uudai = quanli.Uudais.FirstOrDefault(p => p.IdUuDai.ToString() == mauudai);
+                        quanli.Uudais.Remove(uudai);
+                        quanli.SaveChanges();
+                        loadsukien();
+                    }    
+                }    
+            }    
+        }
+      public void resetud()
+        {
+            txttenud.Enabled = false;
+            dtngaykt.Enabled = false;
+            dtngaybd.Enabled = false;
+            txtgiamud.Enabled = false;
+            txtidud.Text = "";
+            txttenud.Text = "";
+            txtgiamud.Text = "";
+
+        }
+        private void btnLuuud_Click(object sender, EventArgs e)
+        {
+            if (txttenud.Text == "" || txtgiamud.Text == "")
+            {
+                MessageBox.Show("Nhập đầy đủ mục");
+                return;
+            }
+            if (dtngaybd.Value < DateTime.Now)
+            {
+                MessageBox.Show("Ngày bắt đầu sự kiện phải lớn hơn ngày hiện tại");
+                return;
+            }
+            if (dtngaykt.Value < dtngaybd.Value)
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu");
+                return;
+            }
+            try
+            {
+                float.Parse(txtgiamud.Text);
+            } catch(Exception)
+            {
+                MessageBox.Show("Mục giảm giá nhập sai kiểu dữ liệu. Hãy nhập số thực (Vd:0.1)");
+                return;
+            }
+            if (btnthemud.Text == "Làm mới")
+            {
+               
+                using(THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                {
+                    Uudai uudai = quanli.Uudais.FirstOrDefault(p => p.IdUuDai.ToString() == txtidud.Text.Trim());
+                    uudai.TenUuDai = txttenud.Text;
+                    uudai.NgayBatDau = dtngaybd.Value;
+                    uudai.NgayKetThuc = dtngaykt.Value;
+                    uudai.GiamGia = float.Parse(txtgiamud.Text);
+                    quanli.SaveChanges();                 
+                    loadsukien();
+                    btnthemud.Text = "Thêm";
+                    resetud();
+                }    
+            }
+            else
+            {
+                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                {
+                    quanli.themsukien(txttenud.Text, dtngaybd.Value, dtngaykt.Value, float.Parse(txtgiamud.Text));
+                    quanli.SaveChanges();
+                    MessageBox.Show("Thêm thành công");
+                    loadsukien();
+                    resetud();
+                }
+            }    
+        }
+
+        private void btnthemud_Click(object sender, EventArgs e)
+        {
+            if(btnthemud.Text == "Làm mới")
+            {
+                resetud();
+            } 
+            if(btnthemud.Text == "Thêm")
+            {
+                txtgiamud.Enabled = true;
+                txttenud.Enabled = true;
+                dtngaybd.Enabled = true;
+                dtngaykt.Enabled = true;
+            }    
+        }
+
+        private void btnbackud_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtgiamud_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }

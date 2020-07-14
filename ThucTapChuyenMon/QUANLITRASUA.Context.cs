@@ -127,5 +127,26 @@ namespace ThucTapChuyenMon
     
             return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<doanhso_Result>("[THUCTAPCHUYENMONEntities].[doanhso](@nam)", namParameter);
         }
+    
+        public virtual int themsukien(string tenuudai, Nullable<System.DateTime> ngaybd, Nullable<System.DateTime> ngaykt, Nullable<double> giamgia)
+        {
+            var tenuudaiParameter = tenuudai != null ?
+                new ObjectParameter("tenuudai", tenuudai) :
+                new ObjectParameter("tenuudai", typeof(string));
+    
+            var ngaybdParameter = ngaybd.HasValue ?
+                new ObjectParameter("ngaybd", ngaybd) :
+                new ObjectParameter("ngaybd", typeof(System.DateTime));
+    
+            var ngayktParameter = ngaykt.HasValue ?
+                new ObjectParameter("ngaykt", ngaykt) :
+                new ObjectParameter("ngaykt", typeof(System.DateTime));
+    
+            var giamgiaParameter = giamgia.HasValue ?
+                new ObjectParameter("giamgia", giamgia) :
+                new ObjectParameter("giamgia", typeof(double));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("themsukien", tenuudaiParameter, ngaybdParameter, ngayktParameter, giamgiaParameter);
+        }
     }
 }

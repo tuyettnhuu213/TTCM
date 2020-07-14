@@ -468,6 +468,12 @@
     <FunctionImport Name="doanhso" IsComposable="true" ReturnType="Collection(QUANLITRASUAModel.doanhso_Result)">
       <Parameter Name="nam" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="themsukien">
+      <Parameter Name="tenuudai" Mode="In" Type="String" />
+      <Parameter Name="ngaybd" Mode="In" Type="DateTime" />
+      <Parameter Name="ngaykt" Mode="In" Type="DateTime" />
+      <Parameter Name="giamgia" Mode="In" Type="Double" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="getdskhachhang_Result">
     <Property Type="String" Name="IdKhachHang" Nullable="false" MaxLength="10" />
