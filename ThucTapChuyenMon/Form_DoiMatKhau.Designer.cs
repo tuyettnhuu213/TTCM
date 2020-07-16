@@ -101,10 +101,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(35, 217);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 27);
+            this.label1.Size = new System.Drawing.Size(157, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nhập mật khẩu cũ";
             // 
@@ -112,10 +112,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(35, 276);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 27);
+            this.label2.Size = new System.Drawing.Size(168, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Nhập mật khẩu mới";
             // 
@@ -123,10 +123,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(35, 340);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(227, 27);
+            this.label3.Size = new System.Drawing.Size(192, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Nhập lại mật khẩu mới";
             // 
@@ -165,11 +165,11 @@
             this.bunifuFlatButton1.Location = new System.Drawing.Point(363, 431);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.IndianRed;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightPink;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(145, 56);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(166, 50);
             this.bunifuFlatButton1.TabIndex = 54;
             this.bunifuFlatButton1.Text = "Hủy Bỏ";
             this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -199,14 +199,14 @@
             this.btthem.IconVisible = true;
             this.btthem.IconZoom = 52D;
             this.btthem.IsTab = false;
-            this.btthem.Location = new System.Drawing.Point(184, 431);
+            this.btthem.Location = new System.Drawing.Point(163, 431);
             this.btthem.Margin = new System.Windows.Forms.Padding(5);
             this.btthem.Name = "btthem";
-            this.btthem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btthem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btthem.OnHoverTextColor = System.Drawing.Color.White;
+            this.btthem.Normalcolor = System.Drawing.Color.IndianRed;
+            this.btthem.OnHovercolor = System.Drawing.Color.LightPink;
+            this.btthem.OnHoverTextColor = System.Drawing.Color.Black;
             this.btthem.selected = false;
-            this.btthem.Size = new System.Drawing.Size(145, 56);
+            this.btthem.Size = new System.Drawing.Size(166, 50);
             this.btthem.TabIndex = 53;
             this.btthem.Text = "Lưu";
             this.btthem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,7 +233,10 @@
             this.Controls.Add(this.txtnhaplai);
             this.Controls.Add(this.txtmkmoi);
             this.Controls.Add(this.txtmkcu);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_DoiMatKhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_DoiMatKhau";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loi)).EndInit();

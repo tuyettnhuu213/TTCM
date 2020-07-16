@@ -39,6 +39,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbsukien = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.bunifuImageButton2 = new Bunifu.Framework.UI.BunifuImageButton();
             this.label12 = new System.Windows.Forms.Label();
             this.txttien = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -94,6 +96,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel3.Controls.Add(this.lbsukien);
+            this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.bunifuImageButton2);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.txttien);
@@ -128,6 +132,25 @@
             this.panel3.Size = new System.Drawing.Size(591, 713);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // lbsukien
+            // 
+            this.lbsukien.AutoSize = true;
+            this.lbsukien.Location = new System.Drawing.Point(206, 620);
+            this.lbsukien.Name = "lbsukien";
+            this.lbsukien.Size = new System.Drawing.Size(117, 17);
+            this.lbsukien.TabIndex = 103;
+            this.lbsukien.Text = "Không có sự kiện";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(175, 615);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(25, 24);
+            this.label13.TabIndex = 102;
+            this.label13.Text = "%";
             // 
             // bunifuImageButton2
             // 
@@ -482,8 +505,9 @@
             this.txtgiamgia.Location = new System.Drawing.Point(98, 606);
             this.txtgiamgia.Margin = new System.Windows.Forms.Padding(4);
             this.txtgiamgia.Name = "txtgiamgia";
-            this.txtgiamgia.Size = new System.Drawing.Size(237, 39);
+            this.txtgiamgia.Size = new System.Drawing.Size(70, 39);
             this.txtgiamgia.TabIndex = 16;
+            this.txtgiamgia.Text = "0";
             this.txtgiamgia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuImageButton1
@@ -670,6 +694,7 @@
             this.panelhinhanh.Name = "panelhinhanh";
             this.panelhinhanh.Size = new System.Drawing.Size(837, 609);
             this.panelhinhanh.TabIndex = 3;
+            this.panelhinhanh.VisibleChanged += new System.EventHandler(this.panelhinhanh_VisibleChanged);
             this.panelhinhanh.Paint += new System.Windows.Forms.PaintEventHandler(this.panelhinhanh_Paint);
             // 
             // picquetmabarcode
@@ -814,5 +839,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lbsukien;
     }
 }

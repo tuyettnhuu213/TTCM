@@ -70,6 +70,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 764);
             this.Controls.Add(this.reportViewer1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_ThanhToan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ThanhToan";

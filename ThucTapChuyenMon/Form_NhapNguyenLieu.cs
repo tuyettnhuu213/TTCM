@@ -49,6 +49,11 @@ namespace ThucTapChuyenMon
 
         private void bthem_Click(object sender, EventArgs e)
         {
+            if(txtnguyenlieu.Text == "" || cbnguyenlieu.Text == "" || txtdvt.Text == "" || txtgia.Text == "" || txtsoluong.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }    
             using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
             {
 
@@ -107,6 +112,11 @@ namespace ThucTapChuyenMon
 
         private void bttach_Click(object sender, EventArgs e)
         {
+            if(dgvnguyenlieu.Rows.Count <= 0)
+            {
+                MessageBox.Show("Thêm nguyên liệu để nhập");
+                return;
+            }    
             using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
             {
                 PhieuNhap pn = new PhieuNhap();
@@ -167,10 +177,7 @@ namespace ThucTapChuyenMon
 
         private void txtsoluong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+           
         }
 
         private void txtgia_KeyPress(object sender, KeyPressEventArgs e)
@@ -179,6 +186,11 @@ namespace ThucTapChuyenMon
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtsoluong_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

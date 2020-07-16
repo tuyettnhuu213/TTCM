@@ -260,7 +260,7 @@
             this.btnDangNhap.ActiveLineColor = System.Drawing.Color.IndianRed;
             this.btnDangNhap.BackColor = System.Drawing.Color.PeachPuff;
             this.btnDangNhap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.BackgroundImage")));
-            this.btnDangNhap.ButtonText = "Thêm";
+            this.btnDangNhap.ButtonText = "Sửa";
             this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDangNhap.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.IndianRed;
@@ -298,7 +298,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_SuaNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_SuaNhanVien";
             this.Load += new System.EventHandler(this.Form_SuaNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

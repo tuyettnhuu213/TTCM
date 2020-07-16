@@ -181,8 +181,8 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::ThucTapChuyenMon.Properties.Resources.f6af7a929f6a1f15734a656c8b173d5a;
-            this.pictureBox3.Location = new System.Drawing.Point(120, 1);
+            this.pictureBox3.Image = global::ThucTapChuyenMon.Properties.Resources.logo_thuc_uong_3;
+            this.pictureBox3.Location = new System.Drawing.Point(131, -1);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(287, 255);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -227,18 +227,21 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(535, 622);
             this.Controls.Add(this.txtname);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.chkpass);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.pictureBox3);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";

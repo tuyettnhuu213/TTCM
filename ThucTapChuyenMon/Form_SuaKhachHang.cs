@@ -20,6 +20,8 @@ namespace ThucTapChuyenMon
         private string tenkh;
         private string diachi;
         private string sdt;
+        private string email;
+        public string Email { get => email; set => email = value; }
 
         public string Tenkh { get => tenkh; set => tenkh = value; }
         public string Diachi { get => diachi; set => diachi = value; }
@@ -27,19 +29,24 @@ namespace ThucTapChuyenMon
 
 
         public string Makh { get => makh; set => makh = value; }
-        public Form_SuaKhachHang(string makh, string tenkh, string diachi, string sdt)
+        public Bunifu.Framework.UI.BunifuThinButton2 getsua()
+        {
+            return btnDangNhap;
+        }
+        public Form_SuaKhachHang(string makh, string tenkh, string diachi, string sdt, string email)
         {
             this.makh = makh;
             this.tenkh = tenkh;
             this.diachi = diachi;
             this.sdt = sdt;
+            this.email = email;
        
             InitializeComponent();
 
         }
         public bool kiemtra()
         {
-            if (txtten.Text == "" || txtsdt.Text == "" || txtdiachi.Text == "")
+            if (txtten.Text == "" || txtemail.Text == "" || txtdiachi.Text == "" || txtemail.Text == "")
             {
                 MessageBox.Show("Yêu cầu nhập đầy đủ thông tin!!!");
                 return false;
@@ -62,25 +69,38 @@ namespace ThucTapChuyenMon
                 kh.TenKhachHang = txtten.Text;
                 kh.SDT = txtsdt.Text;
                 kh.DIACHI = txtdiachi.Text;
-
+                kh.Email = txtemail.Text;
                 quanli.SaveChanges();
                 MessageBox.Show("Sửa thông tin thành công!!");
             }
             this.Close();
         }
 
-        internal object getsua()
-        {
-            throw new NotImplementedException();
-        }
+       
 
         private void Form_SuaKhachHang_Load(object sender, EventArgs e)
         {
             txtten.Text = tenkh;
+            txtemail.Text = email;
             txtdiachi.Text = diachi;
             txtsdt.Text = sdt;
             txtten.Focus();
-    
+            string barcode = "";
+            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            {
+                barcode = db.KhachHangs.FirstOrDefault(p => p.SDT == sdt).IdKhachHang ;
+            }    
+            
+            try
+            {
+                Zen.Barcode.Code128BarcodeDraw brCode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                pictureBox1.Image = brCode.Draw(barcode, 60);
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void btnthoat_Click(object sender, EventArgs e)
@@ -89,6 +109,11 @@ namespace ThucTapChuyenMon
         }
 
         private void txtsdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtsdt_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {

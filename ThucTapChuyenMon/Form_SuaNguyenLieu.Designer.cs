@@ -195,6 +195,8 @@
             this.Controls.Add(this.cbDonViTinh);
             this.Controls.Add(this.txtsoluong);
             this.Controls.Add(this.txtTenNguyenLieu);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_SuaNguyenLieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_SuaNguyenLieu";

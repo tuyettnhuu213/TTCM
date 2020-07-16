@@ -31,15 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_SuaKhachHang));
             this.label5 = new System.Windows.Forms.Label();
             this.txtdiachi = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.txtsdt = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtemail = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtten = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnthoat = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDangNhap = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtsdt = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -71,23 +75,23 @@
             this.txtdiachi.TabIndex = 23;
             this.txtdiachi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // txtsdt
+            // txtemail
             // 
-            this.txtsdt.BorderColorFocused = System.Drawing.Color.Blue;
-            this.txtsdt.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtsdt.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtsdt.BorderThickness = 3;
-            this.txtsdt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtsdt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.txtsdt.ForeColor = System.Drawing.Color.Black;
-            this.txtsdt.isPassword = false;
-            this.txtsdt.Location = new System.Drawing.Point(164, 238);
-            this.txtsdt.Margin = new System.Windows.Forms.Padding(4);
-            this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Size = new System.Drawing.Size(370, 44);
-            this.txtsdt.TabIndex = 20;
-            this.txtsdt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtsdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress);
+            this.txtemail.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtemail.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtemail.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtemail.BorderThickness = 3;
+            this.txtemail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtemail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtemail.ForeColor = System.Drawing.Color.Black;
+            this.txtemail.isPassword = false;
+            this.txtemail.Location = new System.Drawing.Point(164, 238);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(370, 44);
+            this.txtemail.TabIndex = 20;
+            this.txtemail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtemail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress);
             // 
             // txtten
             // 
@@ -124,9 +128,9 @@
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(30, 249);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.Size = new System.Drawing.Size(51, 20);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Số điện thoại";
+            this.label2.Text = "Email";
             // 
             // label1
             // 
@@ -139,16 +143,6 @@
             this.label1.Size = new System.Drawing.Size(127, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Tên khách hàng";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ThucTapChuyenMon.Properties.Resources.customer_service;
-            this.pictureBox1.Location = new System.Drawing.Point(265, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(163, 148);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // btnthoat
             // 
@@ -202,27 +196,82 @@
             this.btnDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(30, 362);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(106, 20);
+            this.label4.TabIndex = 97;
+            this.label4.Text = "Số điện thoại";
+            // 
+            // txtsdt
+            // 
+            this.txtsdt.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtsdt.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtsdt.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtsdt.BorderThickness = 3;
+            this.txtsdt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtsdt.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtsdt.ForeColor = System.Drawing.Color.Black;
+            this.txtsdt.isPassword = false;
+            this.txtsdt.Location = new System.Drawing.Point(164, 347);
+            this.txtsdt.Margin = new System.Windows.Forms.Padding(4);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.Size = new System.Drawing.Size(370, 44);
+            this.txtsdt.TabIndex = 98;
+            this.txtsdt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtsdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(269, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 99;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = global::ThucTapChuyenMon.Properties.Resources.customer_service;
+            this.pictureBox.Location = new System.Drawing.Point(134, 43);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(115, 101);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 100;
+            this.pictureBox.TabStop = false;
+            // 
             // Form_SuaKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PeachPuff;
             this.ClientSize = new System.Drawing.Size(655, 520);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtsdt);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.btnDangNhap);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtdiachi);
-            this.Controls.Add(this.txtsdt);
+            this.Controls.Add(this.txtemail);
             this.Controls.Add(this.txtten);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_SuaKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_SuaKhachHang";
             this.Load += new System.EventHandler(this.Form_SuaKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,13 +281,16 @@
 
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtdiachi;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtsdt;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtemail;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtten;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuThinButton2 btnthoat;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDangNhap;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtsdt;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

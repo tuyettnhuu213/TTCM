@@ -216,7 +216,10 @@
             this.Controls.Add(this.cbdvt);
             this.Controls.Add(this.txtsoluong);
             this.Controls.Add(this.txttennl);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_SuaNguyenLieuSapHet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_SuaNguyenLieuSapHet";
             this.Load += new System.EventHandler(this.Form_SuaNguyenLieuSapHet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

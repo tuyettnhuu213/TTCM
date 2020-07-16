@@ -17,6 +17,7 @@ namespace ThucTapChuyenMon
         {
             InitializeComponent();
         }
+        
         public void Napdatalist()
         {
             lvthucdon.Groups.Clear();
@@ -95,6 +96,7 @@ namespace ThucTapChuyenMon
         {         
             Napdatalist();
             Load_Loai();
+            reset();
             txtgia.Enabled = false;
             using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
             {
@@ -127,7 +129,13 @@ namespace ThucTapChuyenMon
             btsua.Enabled = true;
             btxoa.Enabled = true;
             cbsize.Visible = true;
-            txtgia.Enabled = true;
+            txtgia.Visible = true;
+            txtten.Enabled = true;
+            cbloai.Enabled = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            bunifuImageButton2.Visible = true;
+            btthem.Text = "Làm mới";
             if (lvthucdon.SelectedItems.Count > 0)
             {
                 ListViewItem item = lvthucdon.SelectedItems[0];
@@ -203,11 +211,18 @@ namespace ThucTapChuyenMon
             cbsize.Items.Clear();
             txtten.Text = "";
             txtgia.Text = "";
+            btthem.Text = "Thêm";
             hinhanh.Image = null;
             madouong = 0;
+            txtgia.Visible = false;
             btsua.Enabled = false;
             btxoa.Enabled = false;
-            txtgia.Enabled = true;
+            txtten.Enabled = false;
+            cbloai.Enabled = false;
+            cbsize.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            bunifuImageButton2.Visible = false;
         }
         public void ThemDoUong()
         {
@@ -262,19 +277,20 @@ namespace ThucTapChuyenMon
 
         private void btthem_Click(object sender, EventArgs e)
         {
-            
-                errorMessage.Clear();
-                string ten = txtten.Text.Trim();
-                if (string.IsNullOrEmpty(ten))
-                {
-                    errorMessage.SetError(txtten, "Bạn cần nhập tên đồ uống !");
-                    txtten.Focus();
-                    return;
-                }
-                else
-                {
-                    ThemDoUong();
-                }
+            if(btthem.Text == "Làm mới")
+            {
+                reset();
+                btthem.Text = "Thêm";
+            }  else 
+            {              
+                reset();
+                txtten.Enabled = true;
+                cbloai.Enabled = true;
+                btsua.Enabled = true;
+                cbsize.Visible = false;
+                txtgia.Visible = false;
+            }    
+              
          
             
         }
@@ -294,34 +310,56 @@ namespace ThucTapChuyenMon
 
         private void btsua_Click(object sender, EventArgs e)
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            if (hinhanh.Image == null)
             {
-                if (hinhanh.Image == null)
+                errorMessage.Clear();
+                errorMessage.SetError(hinhanh, "Bạn cần click vào chọn ảnh");
+                return;
+            }
+            if(btthem.Text == "Thêm")
+            {
+                errorMessage.Clear();
+                string ten = txtten.Text.Trim();
+                if (string.IsNullOrEmpty(ten))
                 {
-                    MessageBox.Show("Yêu cầu click vô image chọn ảnh!!! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorMessage.SetError(txtten, "Bạn cần nhập tên đồ uống !");
+                    txtten.Focus();
                     return;
                 }
-                int maloai = quanli.LoaiDoUongs.FirstOrDefault(p => p.TenLoai == cbloai.Text).IdLoai;
-                DoUong du = quanli.DoUongs.FirstOrDefault(p => p.Id == madouong);
-                du.IdLoai = maloai;
-                du.TenDoUong = txtten.Text;
-                MemoryStream me = new MemoryStream();
-                byte[] images = null;
-                if (img != "")
+                if (cbloai.SelectedItem == null)
                 {
-                    FileStream stream = new FileStream(img, FileMode.Open, FileAccess.Read);
-                    BinaryReader brs = new BinaryReader(stream);
-                    images = brs.ReadBytes((int)stream.Length);
-                    du.HinhAnh = images;
+                    errorMessage.Clear();
+                    errorMessage.SetError(cbloai, "Bạn cần chọn loại đồ uống!");
                 }
-                if(cbsize.Text != "" )
-                {
-                    quanli.updateCTdu(du.Id, cbsize.SelectedItem.ToString(), int.Parse(txtgia.Text));
-                }                
-                quanli.SaveChanges();
-                Napdatalist();
-                MessageBox.Show(this, "Đã Lưu !", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ThemDoUong();
             }
+            else
+            {
+                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                {                   
+                    int maloai = quanli.LoaiDoUongs.FirstOrDefault(p => p.TenLoai == cbloai.Text).IdLoai;
+                    DoUong du = quanli.DoUongs.FirstOrDefault(p => p.Id == madouong);
+                    du.IdLoai = maloai;
+                    du.TenDoUong = txtten.Text;
+                    MemoryStream me = new MemoryStream();
+                    byte[] images = null;
+                    if (img != "")
+                    {
+                        FileStream stream = new FileStream(img, FileMode.Open, FileAccess.Read);
+                        BinaryReader brs = new BinaryReader(stream);
+                        images = brs.ReadBytes((int)stream.Length);
+                        du.HinhAnh = images;
+                    }
+                    if (cbsize.Text != "")
+                    {
+                        quanli.updateCTdu(du.Id, cbsize.SelectedItem.ToString(), int.Parse(txtgia.Text));
+                    }
+                    quanli.SaveChanges();
+                    Napdatalist();
+                    MessageBox.Show(this, "Đã Lưu !", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }    
+         
         }
         private void formcloseloai(object sender, FormClosedEventArgs e)
         {

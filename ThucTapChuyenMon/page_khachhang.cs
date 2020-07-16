@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Net.Mail;
+using System.Net;
 
 namespace ThucTapChuyenMon
 {
@@ -27,26 +30,64 @@ namespace ThucTapChuyenMon
            From_ThemKhachHang them = new From_ThemKhachHang();
             them.ShowDialog();
         }
-        private void loadkhachhang()
+        private void loadkhachhang(int maloai)
         {
+            DataTable table = new DataTable();
+            table.Columns.Add("IdKhachHang");
+            table.Columns.Add("TenKhachHang");
+            table.Columns.Add("DiaChi");
+            table.Columns.Add("Email");
+            table.Columns.Add("SDT");
+            table.Columns.Add("DiemTichLuy");
+            table.Columns.Add("TenLoai");
+
             using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
             {
-                dgvkhachhang.DataSource = db.xuatdskhachhang(0);
+                List<KhachHang> ds_kh = db.KhachHangs.ToList();
+                if(maloai == 0)
+                {
+                    foreach(var item in ds_kh)
+                    {
+                        string loaithe = "";
+                        loaithe = db.LoaiKhachHangs.FirstOrDefault(p => p.IdLoai == item.IdLoai).TenLoai;
+                        table.Rows.Add(item.IdKhachHang, item.TenKhachHang, item.DIACHI, item.Email, item.SDT, item.DiemTichLuy, loaithe);
+                    }    
+                }  
+                else
+                {
+                    foreach (var item in ds_kh)
+                    {
+                        if(item.IdLoai == maloai)
+                        {
+                            string loaithe = "";
+                            loaithe = db.LoaiKhachHangs.FirstOrDefault(p => p.IdLoai == maloai).TenLoai;
+                            table.Rows.Add(item.IdKhachHang, item.TenKhachHang, item.DIACHI, item.Email, item.SDT, item.DiemTichLuy, loaithe);
+                        }    
+                        
+                    }
+                }    
+
             }
+            dgvkhachhang.DataSource = table;
 
         }
 
         private void page_khachhang_Load(object sender, EventArgs e)
         {
-            loadkhachhang();
+            loadkhachhang(0);
             loadloaithe();
             loadsukien();
-            btnHuy.IconVisible = true;
+            bunifuFlatButton1.IconVisible = true;
             btnSua.IconVisible = true;
             btnView.IconVisible = true;
             btnThemKH.IconVisible = true;
+            btnthemud.IconVisible = true;
+            btnLuuud.IconVisible = true;
+            bunifuFlatButton2.Enabled = false;
+            resetud();
 
         }
+
 
         private void loadloaithe()
         {
@@ -69,7 +110,7 @@ namespace ThucTapChuyenMon
 
         private void Clicksua(object sender, EventArgs e)
         {
-            loadkhachhang();
+            loadkhachhang(0);
         }
         private void dgvkhachhang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -78,15 +119,12 @@ namespace ThucTapChuyenMon
                 string makh = dgvkhachhang.Rows[e.RowIndex].Cells[1].Value.ToString();
                 string tenkh = dgvkhachhang.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string diachi = dgvkhachhang.Rows[e.RowIndex].Cells[3].Value.ToString();
-                string sdt = dgvkhachhang.Rows[e.RowIndex].Cells[4].Value.ToString();
-                string loai = dgvkhachhang.Rows[e.RowIndex].Cells[5].Value.ToString();
-                string dtl = dgvkhachhang.Rows[e.RowIndex].Cells[6].Value.ToString();
-
-               Form_SuaKhachHang suachua = new Form_SuaKhachHang(makh, tenkh, diachi, sdt);
-             //   suachua.getsuachua.Click += Clicksua;
-                suachua.ShowDialog();
-
-                suachua.ShowDialog();
+                string email = dgvkhachhang.Rows[e.RowIndex].Cells[4].Value.ToString();
+                string sdt = dgvkhachhang.Rows[e.RowIndex].Cells[5].Value.ToString();
+              
+               Form_SuaKhachHang suachua = new Form_SuaKhachHang(makh, tenkh, diachi, sdt, email);
+               suachua.getsuachua().Click += Clicksua;
+               suachua.ShowDialog();       
             }
         }
 
@@ -97,55 +135,53 @@ namespace ThucTapChuyenMon
                 if (rdVang.Checked)
 
                 {
-                    dgvkhachhang.DataSource = db.xuatdskhachhang(4);
+                   loadkhachhang(4);
                 }
                 if (rdBac.Checked)
                 {
-                    dgvkhachhang.DataSource = db.xuatdskhachhang(3);
+                   loadkhachhang(3);
                 }
                 if (rdDong.Checked)
                 {
-                    dgvkhachhang.DataSource = db.xuatdskhachhang(2);
+                    loadkhachhang(2);
                 }
                 if (rdThanhVien.Checked)
                 {
-                    dgvkhachhang.DataSource = db.xuatdskhachhang(1);
+                     loadkhachhang(1);
                 }
                 if (rdNone.Checked)
                 {
-                    dgvkhachhang.DataSource = db.xuatdskhachhang(0);
+                     loadkhachhang(0);
                 }
             }
         }
         int k;
         private void dgvloaithetv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            String manl = dgvloaithetv.Rows[e.RowIndex].Cells["IdLoai"].Value.ToString();
-            if (e.ColumnIndex == 0)
+            txtMa.Text = dgvloaithetv.Rows[e.RowIndex].Cells["IdLoai"].Value.ToString();
+            txtLoaithe.Text = dgvloaithetv.Rows[e.RowIndex].Cells["TenLoai"].Value.ToString();
+            txtGiamGia.Text = dgvloaithetv.Rows[e.RowIndex].Cells["GiamGia"].Value.ToString();
+            txtDTT.Text = Convert.ToString(dgvloaithetv.Rows[e.RowIndex].Cells["DiemToiThieu"].Value);
+            if(e.ColumnIndex == 0)
             {
-                k = 0;
-                txtMa.Text = manl;
-                txtLoaithe.Text = dgvloaithetv.Rows[e.RowIndex].Cells["TenLoai"].Value.ToString();
-                txtGiamGia.Text = dgvloaithetv.Rows[e.RowIndex].Cells["GiamGia"].Value.ToString();
-                txtDTT.Text = Convert.ToString(dgvloaithetv.Rows[e.RowIndex].Cells["DiemToiThieu"].Value);
-            }
+                txtDTT.Enabled = true;
+                txtGiamGia.Enabled = true;
+                btnSua.Enabled = true;
+            }    
             
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (txtMa.Text != "")
-
+            if(txtMa.Text == "")
             {
-                try
-                {
-                    float.Parse(txtgiamud.Text);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Mục giảm giá nhập sai kiểu dữ liệu. Hãy nhập số thực (Vd:0.1)");
-                    return;
-                }
+                MessageBox.Show("Chọn loại thẻ cần sửa");
+                return;
+            }
+            else
+            {
+                txtDTT.Enabled = true;
+                txtGiamGia.Enabled = true;
                 if (txtDTT.Text == "" || txtGiamGia.Text == "")
                 {
                     MessageBox.Show("Hãy nhập đầy đủ thông tin");
@@ -156,19 +192,17 @@ namespace ThucTapChuyenMon
                     using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
                     {
 
-                        LoaiKhachHang lt = db.LoaiKhachHangs.Where(p => p.IdLoai == Convert.ToInt32(txtMa.Text)).FirstOrDefault();
+                        LoaiKhachHang lt = db.LoaiKhachHangs.FirstOrDefault(p => p.IdLoai.ToString() == txtMa.Text);
                         lt.GiamGia = int.Parse(txtGiamGia.Text);
                         lt.DiemToiThieu = int.Parse(txtDTT.Text);
                         db.SaveChanges();
                         MessageBox.Show("Cập nhật thành công");
+                        resetud();
                         loadloaithe();
                     }
                 }
             }
-            else
-            {
-                MessageBox.Show("An vao nut sua");
-            }
+        
         }
         public string RemoveUnicode(string text)
         {
@@ -221,14 +255,14 @@ namespace ThucTapChuyenMon
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
             if (txtsearch.Text == "")
-                loadkhachhang();
+                loadkhachhang(0);
             timkiem();
         }
 
         private void txtsearch_KeyDown(object sender, KeyEventArgs e)
         {
             if (txtsearch.Text == "")
-                loadkhachhang();
+                loadkhachhang(0);
             timkiem();
         }
 
@@ -239,7 +273,10 @@ namespace ThucTapChuyenMon
 
         private void txtGiamGia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtDTT_KeyPress(object sender, KeyPressEventArgs e)
@@ -275,7 +312,11 @@ namespace ThucTapChuyenMon
 
         private void dgvuudai_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            txtidud.Text = dgvuudai.Rows[e.RowIndex].Cells["IdUuDai"].Value.ToString();
+            txttenud.Text = dgvuudai.Rows[e.RowIndex].Cells["TenUuDai"].Value.ToString();
+            dtngaybd.Value = Convert.ToDateTime(dgvuudai.Rows[e.RowIndex].Cells["NgayBatDau"].Value.ToString());
+            dtngaykt.Value = Convert.ToDateTime(dgvuudai.Rows[e.RowIndex].Cells["NgayKetThuc"].Value.ToString());
+            txtgiamud.Text = dgvuudai.Rows[e.RowIndex].Cells["Giam"].Value.ToString();
             String mauudai = dgvuudai.Rows[e.RowIndex].Cells["IdUuDai"].Value.ToString();
             if (e.ColumnIndex == 0)
             {
@@ -283,11 +324,8 @@ namespace ThucTapChuyenMon
                 dtngaykt.Enabled = true;
                 dtngaybd.Enabled = true;
                 txtgiamud.Enabled = true;
-                txtidud.Text = mauudai;
-                txttenud.Text = dgvuudai.Rows[e.RowIndex].Cells["TenUuDai"].Value.ToString();
-                dtngaybd.Value = Convert.ToDateTime( dgvuudai.Rows[e.RowIndex].Cells["NgayBatDau"].Value.ToString());
-                dtngaykt.Value = Convert.ToDateTime(dgvuudai.Rows[e.RowIndex].Cells["NgayKetThuc"].Value.ToString());
-                txtgiamud.Text = dgvuudai.Rows[e.RowIndex].Cells["Giam"].Value.ToString();
+                btnLuuud.Enabled = true;
+                bunifuFlatButton2.Enabled = true;
                 btnthemud.Text = "Làm mới";
             }
             if (e.ColumnIndex == 1)
@@ -299,6 +337,7 @@ namespace ThucTapChuyenMon
                         Uudai uudai = quanli.Uudais.FirstOrDefault(p => p.IdUuDai.ToString() == mauudai);
                         quanli.Uudais.Remove(uudai);
                         quanli.SaveChanges();
+                        resetud();
                         loadsukien();
                     }    
                 }    
@@ -313,7 +352,14 @@ namespace ThucTapChuyenMon
             txtidud.Text = "";
             txttenud.Text = "";
             txtgiamud.Text = "";
-
+            txtMa.Text = "";
+            txtMa.Enabled = false;
+            txtDTT.Text = "";
+            txtDTT.Enabled = false;
+            txtGiamGia.Enabled = false;
+            txtGiamGia.Text = "";
+            btnLuuud.Enabled = false;
+            btnSua.Enabled = false;
         }
         private void btnLuuud_Click(object sender, EventArgs e)
         {
@@ -324,22 +370,14 @@ namespace ThucTapChuyenMon
             }
             if (dtngaybd.Value < DateTime.Now)
             {
-                MessageBox.Show("Ngày bắt đầu sự kiện phải lớn hơn ngày hiện tại");
+                MessageBox.Show("Ngày bắt đầu sự kiện phải lớn hơn hoặc bằng ngày hiện tại");
                 return;
             }
             if (dtngaykt.Value < dtngaybd.Value)
             {
                 MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu");
                 return;
-            }
-            try
-            {
-                float.Parse(txtgiamud.Text);
-            } catch(Exception)
-            {
-                MessageBox.Show("Mục giảm giá nhập sai kiểu dữ liệu. Hãy nhập số thực (Vd:0.1)");
-                return;
-            }
+            }         
             if (btnthemud.Text == "Làm mới")
             {
                
@@ -349,7 +387,7 @@ namespace ThucTapChuyenMon
                     uudai.TenUuDai = txttenud.Text;
                     uudai.NgayBatDau = dtngaybd.Value;
                     uudai.NgayKetThuc = dtngaykt.Value;
-                    uudai.GiamGia = float.Parse(txtgiamud.Text);
+                    uudai.GiamGia = int.Parse(txtgiamud.Text);
                     quanli.SaveChanges();                 
                     loadsukien();
                     btnthemud.Text = "Thêm";
@@ -374,14 +412,19 @@ namespace ThucTapChuyenMon
             if(btnthemud.Text == "Làm mới")
             {
                 resetud();
-            } 
-            if(btnthemud.Text == "Thêm")
+                btnthemud.Text = "Thêm";
+            } else
             {
-                txtgiamud.Enabled = true;
-                txttenud.Enabled = true;
-                dtngaybd.Enabled = true;
-                dtngaykt.Enabled = true;
-            }    
+                if (btnthemud.Text == "Thêm")
+                {
+                    txtgiamud.Enabled = true;
+                    txttenud.Enabled = true;
+                    dtngaybd.Enabled = true;
+                    dtngaykt.Enabled = true;
+                    btnLuuud.Enabled = true;
+                }
+            }
+           
         }
 
         private void btnbackud_Click(object sender, EventArgs e)
@@ -391,7 +434,63 @@ namespace ThucTapChuyenMon
 
         private void txtgiamud_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            resetud();
+        }
+        string img = "";
+        
+        public void ds_khachhang()
+        { 
+            
+        }
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            if (txttenud.Text == "")
+            {
+                MessageBox.Show("Chọn sự kiện muốn gửi");
+                return;
+            }
+            Form_GuiMail gm = new Form_GuiMail(txttenud.Text,dtngaybd.Value.ToString(),dtngaykt.Value.ToString(),txtgiamud.Text);
+            gm.ShowDialog();
+            
+        }
+        Attachment attachment = null;    
+        string txttendangnhap = "quantrasuatest@gmail.com";
+        string txtmatkhau = "123456cuahang";
+        void GuiMail(String from, String to, String subject, String message, Attachment attachment = null)
+        {
+            try
+            {
+
+                MailMessage mess = new MailMessage(from, to, subject, message);
+                if (attachment != null)
+                {                                     
+                    mess.Attachments.Add(attachment);
+                }
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+                client.EnableSsl = true;
+                client.Credentials = new NetworkCredential(txttendangnhap, txtmatkhau);
+                client.Send(mess);
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Lỗi");
+            } 
+
+        }
+        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        {
+            
+          
+        }      
+      
     }
 }

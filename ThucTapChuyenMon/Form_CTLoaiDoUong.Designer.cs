@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvloai = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.maloai = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +61,7 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.IndianRed;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightPink;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvloai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -68,9 +70,17 @@
             this.maloai,
             this.tenloai,
             this.xoa});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightPink;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvloai.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvloai.DoubleBuffered = true;
             this.dgvloai.EnableHeadersVisualStyles = false;
-            this.dgvloai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dgvloai.GridColor = System.Drawing.Color.IndianRed;
             this.dgvloai.HeaderBgColor = System.Drawing.Color.IndianRed;
             this.dgvloai.HeaderForeColor = System.Drawing.Color.White;
             this.dgvloai.Location = new System.Drawing.Point(51, 137);
@@ -78,6 +88,14 @@
             this.dgvloai.Name = "dgvloai";
             this.dgvloai.ReadOnly = true;
             this.dgvloai.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightPink;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvloai.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvloai.RowHeadersWidth = 51;
             this.dgvloai.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvloai.Size = new System.Drawing.Size(565, 185);
@@ -136,12 +154,12 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(156, 21);
+            this.label1.Location = new System.Drawing.Point(199, 19);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 29);
+            this.label1.Size = new System.Drawing.Size(198, 29);
             this.label1.TabIndex = 6;
-            this.label1.Text = "CHI TIẾT LOẠI ĐỒ UỐNG";
+            this.label1.Text = "LOẠI ĐỒ UỐNG";
             // 
             // btluu
             // 
@@ -168,9 +186,9 @@
             this.btluu.Location = new System.Drawing.Point(271, 420);
             this.btluu.Margin = new System.Windows.Forms.Padding(5);
             this.btluu.Name = "btluu";
-            this.btluu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btluu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btluu.OnHoverTextColor = System.Drawing.Color.White;
+            this.btluu.Normalcolor = System.Drawing.Color.IndianRed;
+            this.btluu.OnHovercolor = System.Drawing.Color.LightPink;
+            this.btluu.OnHoverTextColor = System.Drawing.Color.Black;
             this.btluu.selected = false;
             this.btluu.Size = new System.Drawing.Size(137, 44);
             this.btluu.TabIndex = 22;
@@ -228,9 +246,9 @@
             this.btnthem.Location = new System.Drawing.Point(109, 420);
             this.btnthem.Margin = new System.Windows.Forms.Padding(5);
             this.btnthem.Name = "btnthem";
-            this.btnthem.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnthem.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btnthem.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnthem.Normalcolor = System.Drawing.Color.IndianRed;
+            this.btnthem.OnHovercolor = System.Drawing.Color.LightPink;
+            this.btnthem.OnHoverTextColor = System.Drawing.Color.Black;
             this.btnthem.selected = false;
             this.btnthem.Size = new System.Drawing.Size(127, 44);
             this.btnthem.TabIndex = 19;
@@ -265,9 +283,9 @@
             this.bunifuFlatButton1.Location = new System.Drawing.Point(424, 420);
             this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.IndianRed;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.LightPink;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(137, 44);
             this.bunifuFlatButton1.TabIndex = 24;
@@ -291,6 +309,8 @@
             this.Controls.Add(this.txtloai);
             this.Controls.Add(this.btnthem);
             this.ForeColor = System.Drawing.Color.Black;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_CTLoaiDoUong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_CTLoaiDoUong";

@@ -33,6 +33,23 @@ namespace ThucTapChuyenMon
             this.makh = makh;
             InitializeComponent();
         }
+        public void loadgiamgia()
+        {
+            DateTime now = DateTime.Now;
+            using(THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            {
+                List<Uudai> ds_uudai = quanli.Uudais.ToList();
+                foreach(var item in ds_uudai)
+                {
+                    if(now > item.NgayBatDau && now<item.NgayKetThuc)
+                    {
+                        txtgiamgia.Text = item.GiamGia.ToString();
+                        lbsukien.Text = item.TenUuDai;
+                        return;
+                    }    
+                }    
+            }
+        }
         public void loadhinh(int maloai)
         {
             panelhinhanh.Controls.Clear();
@@ -171,9 +188,6 @@ namespace ThucTapChuyenMon
 
         private void btnquetma_Click(object sender, EventArgs e)
         {
-            //Form_QuetMaBarCode qm = new Form_QuetMaBarCode(username);
-            //qm.FormClosed += new FormClosedEventHandler(formclose);
-            //qm.ShowDialog();
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo device in filterInfoCollection)
                 comboBox1.Items.Add(device.Name);
@@ -209,7 +223,9 @@ namespace ThucTapChuyenMon
                                     lbtenkhachhang.Text = kh.TenKhachHang;
                                     LoaiKhachHang loai = quanli.LoaiKhachHangs.Where(p => p.IdLoai == kh.IdLoai).FirstOrDefault();
                                     txtgiamgia.Text = loai.GiamGia.ToString();
-
+                                  //  video.Stop();
+                                    panelhinhanh.Visible = true;
+                                    paneldanhmuc.Visible = true;                                  
                                 }    
                             }
                         }    
@@ -265,7 +281,7 @@ namespace ThucTapChuyenMon
                 }
                
             }
-            txtgiamgia.Text = "0";
+            loadgiamgia();
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -506,7 +522,7 @@ namespace ThucTapChuyenMon
                         }                       
                     }   
                     hd.TongTien = int.Parse(txtsaugiam.Text);
-                    hd.TenDangNhap = txtuser.Text.Trim();                  
+                    hd.TenDangNhap = txtuser.Text.Trim().ToLower();                  
                     hd.ThoiGianLap = DateTime.Now;
                     quanli.SaveChanges();
                     MessageBox.Show("Thanh toán thành công");
@@ -559,7 +575,7 @@ namespace ThucTapChuyenMon
                 int tien = int.Parse(txttien.Text);
                 if (txtgiamgia.Text != "0" || txtgiamgia.Text != "")
                 {
-                    float saugiam = tien - tien * float.Parse(txtgiamgia.Text);
+                    float saugiam = tien - tien * int.Parse(txtgiamgia.Text)/100;
                     txtsaugiam.Text = saugiam.ToString();
                 }
                 else txtsaugiam.Text = txttien.Text;
@@ -579,11 +595,10 @@ namespace ThucTapChuyenMon
 
         private void bunifuFlatButton1_Click_1(object sender, EventArgs e)
         {
-            if (video != null)
-            {
-                if (video.IsRunning)
+
+            if (video.IsRunning == true)
                     video.Stop();
-            }
+
             panelhinhanh.Visible = true;
             paneldanhmuc.Visible = true;
         }
@@ -591,6 +606,23 @@ namespace ThucTapChuyenMon
         private void bunifuImageButton2_Click(object sender, EventArgs e)
         {
             reset();
+        }
+
+        private void panelhinhanh_VisibleChanged(object sender, EventArgs e)
+        {
+            if(panelhinhanh.Visible == true)
+            {
+                if(video!=null)
+                {
+                    if (video.IsRunning == true)
+                    {
+                        video.SignalToStop();
+                        video.NewFrame -= new NewFrameEventHandler(VideoCaptureDevice_NewFrame);
+                        video = null;
+                    }
+                }
+               
+            }
         }
     }
  }

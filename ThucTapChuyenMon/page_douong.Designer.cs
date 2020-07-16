@@ -108,10 +108,10 @@
             // 
             // txtten
             // 
-            this.txtten.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtten.BorderColorFocused = System.Drawing.Color.IndianRed;
             this.txtten.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtten.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtten.BorderThickness = 3;
+            this.txtten.BorderColorMouseHover = System.Drawing.Color.IndianRed;
+            this.txtten.BorderThickness = 1;
             this.txtten.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtten.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -125,10 +125,10 @@
             // 
             // txtgia
             // 
-            this.txtgia.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtgia.BorderColorFocused = System.Drawing.Color.IndianRed;
             this.txtgia.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtgia.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.txtgia.BorderThickness = 3;
+            this.txtgia.BorderColorMouseHover = System.Drawing.Color.IndianRed;
+            this.txtgia.BorderThickness = 1;
             this.txtgia.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtgia.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtgia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -312,11 +312,11 @@
             this.btsua.BackColor = System.Drawing.Color.IndianRed;
             this.btsua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btsua.BorderRadius = 0;
-            this.btsua.ButtonText = "Sửa";
+            this.btsua.ButtonText = "Lưu";
             this.btsua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btsua.DisabledColor = System.Drawing.Color.Gray;
             this.btsua.Iconcolor = System.Drawing.Color.Transparent;
-            this.btsua.Iconimage = global::ThucTapChuyenMon.Properties.Resources.marker__1_;
+            this.btsua.Iconimage = global::ThucTapChuyenMon.Properties.Resources.save__1_;
             this.btsua.Iconimage_right = null;
             this.btsua.Iconimage_right_Selected = null;
             this.btsua.Iconimage_Selected = null;
@@ -336,7 +336,7 @@
             this.btsua.selected = false;
             this.btsua.Size = new System.Drawing.Size(209, 59);
             this.btsua.TabIndex = 8;
-            this.btsua.Text = "Sửa";
+            this.btsua.Text = "Lưu";
             this.btsua.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btsua.Textcolor = System.Drawing.Color.White;
             this.btsua.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -68,6 +68,7 @@
             // 
             this.groupControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.groupControl2.Appearance.Options.UseBackColor = true;
+            this.groupControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl2.Controls.Add(this.dgvnguyenlieu);
             this.groupControl2.Location = new System.Drawing.Point(473, 91);
             this.groupControl2.Margin = new System.Windows.Forms.Padding(4);
@@ -226,7 +227,7 @@
             this.bthuy.OnHovercolor = System.Drawing.Color.LightPink;
             this.bthuy.OnHoverTextColor = System.Drawing.Color.White;
             this.bthuy.selected = false;
-            this.bthuy.Size = new System.Drawing.Size(132, 42);
+            this.bthuy.Size = new System.Drawing.Size(195, 42);
             this.bthuy.TabIndex = 24;
             this.bthuy.Text = "Hủy Bỏ";
             this.bthuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -350,6 +351,7 @@
             // 
             this.groupControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.txttonkho);
             this.groupControl1.Controls.Add(this.txtdvt);
@@ -458,6 +460,8 @@
             this.Controls.Add(this.bthuy);
             this.Controls.Add(this.bttach);
             this.Controls.Add(this.groupControl1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_XuatKho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_XuatKho";

@@ -179,6 +179,7 @@
             this.txtmakhachhang.BorderColorMouseHover = System.Drawing.Color.Blue;
             this.txtmakhachhang.BorderThickness = 3;
             this.txtmakhachhang.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtmakhachhang.Enabled = false;
             this.txtmakhachhang.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtmakhachhang.ForeColor = System.Drawing.Color.Black;
             this.txtmakhachhang.isPassword = false;
@@ -191,10 +192,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(257, 53);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Location = new System.Drawing.Point(329, 77);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 138);
+            this.pictureBox1.Size = new System.Drawing.Size(191, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
@@ -253,7 +255,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ThucTapChuyenMon.Properties.Resources.customer_service;
-            this.pictureBox2.Location = new System.Drawing.Point(122, 65);
+            this.pictureBox2.Location = new System.Drawing.Point(199, 77);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(115, 101);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -280,6 +282,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "From_ThemKhachHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm khách hàng";

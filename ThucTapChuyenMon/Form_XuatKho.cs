@@ -47,6 +47,11 @@ namespace ThucTapChuyenMon
 
         private void bthem_Click(object sender, EventArgs e)
         {
+            if(txtnguyenlieu.Text == "" || txtsoluong.Text == "" )
+            {
+                MessageBox.Show("Chọn đầy đủ thông tin");
+                return;
+            }    
             using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
             {
 

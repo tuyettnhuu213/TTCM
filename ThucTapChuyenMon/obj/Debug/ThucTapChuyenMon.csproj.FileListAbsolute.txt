@@ -305,7 +305,6 @@ C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\bin\Debug\de\DevExpress
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\bin\Debug\es\DevExpress.Pdf.v19.1.Core.resources.dll
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
-C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.csprojAssemblyReference.cache
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.DangNhap.resources
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.Form_NhapNguyenLieu.resources
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.Form_NhapNguyenLieuSapHet.resources
@@ -335,3 +334,5 @@ C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyen
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.csproj.CopyComplete
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.exe
 C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.pdb
+C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.csprojAssemblyReference.cache
+C:\Users\tuyet\OneDrive\Máy tính\TTCM\ThucTapChuyenMon\obj\Debug\ThucTapChuyenMon.Form_GuiMail.resources

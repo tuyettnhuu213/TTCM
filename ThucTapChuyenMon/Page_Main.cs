@@ -259,6 +259,7 @@ namespace ThucTapChuyenMon
            if( MessageBox.Show(this, "Bạn có thật sự muốn đăng xuất !", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 Application.Restart();
+                Environment.Exit(10);
                 label1.Text = "";
             }
         }
