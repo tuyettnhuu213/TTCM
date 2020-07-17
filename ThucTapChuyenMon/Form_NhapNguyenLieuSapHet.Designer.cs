@@ -80,14 +80,14 @@
             this.bthuy.IconVisible = true;
             this.bthuy.IconZoom = 60D;
             this.bthuy.IsTab = false;
-            this.bthuy.Location = new System.Drawing.Point(235, 267);
+            this.bthuy.Location = new System.Drawing.Point(208, 267);
             this.bthuy.Margin = new System.Windows.Forms.Padding(5);
             this.bthuy.Name = "bthuy";
             this.bthuy.Normalcolor = System.Drawing.Color.IndianRed;
             this.bthuy.OnHovercolor = System.Drawing.Color.Pink;
             this.bthuy.OnHoverTextColor = System.Drawing.Color.White;
             this.bthuy.selected = false;
-            this.bthuy.Size = new System.Drawing.Size(132, 47);
+            this.bthuy.Size = new System.Drawing.Size(164, 47);
             this.bthuy.TabIndex = 38;
             this.bthuy.Text = "Hủy Bỏ";
             this.bthuy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
