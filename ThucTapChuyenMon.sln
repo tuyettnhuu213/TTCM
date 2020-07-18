@@ -5,16 +5,27 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThucTapChuyenMon", "ThucTapChuyenMon\ThucTapChuyenMon.csproj", "{8353AE72-5102-48D1-87C8-3BF841BDB017}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "AI Setup Project1", "AI Setup Project1\AI Setup Project1.aiproj", "{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8353AE72-5102-48D1-87C8-3BF841BDB017}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{8353AE72-5102-48D1-87C8-3BF841BDB017}.All|Any CPU.Build.0 = Release|Any CPU
 		{8353AE72-5102-48D1-87C8-3BF841BDB017}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8353AE72-5102-48D1-87C8-3BF841BDB017}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8353AE72-5102-48D1-87C8-3BF841BDB017}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8353AE72-5102-48D1-87C8-3BF841BDB017}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}.All|Any CPU.ActiveCfg = DefaultBuild
+		{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}.All|Any CPU.Build.0 = DefaultBuild
+		{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}.Debug|Any CPU.Build.0 = DefaultBuild
+		{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{91D6B032-E4B7-40E6-8A60-F465BD5EE0D6}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

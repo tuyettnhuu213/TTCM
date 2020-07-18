@@ -45,7 +45,7 @@ namespace ThucTapChuyenMon
         }
         public void loadnl()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 NguyenLieu nl = quanli.NguyenLieux.FirstOrDefault(p => p.IdNguyenLieu == manl);
                 txttennl.Text = nl.TenNguyenLieu;
@@ -66,7 +66,7 @@ namespace ThucTapChuyenMon
         {
             if (!kiemtra())
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 PhieuNhap pn = new PhieuNhap();
                 pn.TenDangNhap = username;

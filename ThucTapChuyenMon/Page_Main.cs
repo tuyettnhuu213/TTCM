@@ -42,7 +42,7 @@ namespace ThucTapChuyenMon
         private void loadcanhbao()
         {
             int dem = 0;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nguyenlieu = quanli.NguyenLieux.ToList();
                 foreach (var item in ds_nguyenlieu)
@@ -173,7 +173,7 @@ namespace ThucTapChuyenMon
         int dem = 0;
         public void phanquyen()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 string[] username = label1.Text.Split(':');
                 string user = username[1].ToString();
@@ -246,6 +246,7 @@ namespace ThucTapChuyenMon
 
         private void btndoimatkhau_Click(object sender, EventArgs e)
         {
+
             string[] username = label1.Text.Split(':');
             Form_DoiMatKhau doimk = new Form_DoiMatKhau(username[1]);
             doimk.ShowDialog();
@@ -254,14 +255,41 @@ namespace ThucTapChuyenMon
         {
             return error;
         }
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
+    
+
+        private void dropDownButton1_Click(object sender, EventArgs e)
         {
-           if( MessageBox.Show(this, "Bạn có thật sự muốn đăng xuất !", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] username = label1.Text.Split(':');
+
+            Form_CaNhan cn = new Form_CaNhan(username[1]);
+            cn.ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string[] username = label1.Text.Split(':');
+            Form_DoiMatKhau doimk = new Form_DoiMatKhau(username[1]);
+            doimk.ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(this, "Bạn có thật sự muốn đăng xuất !", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 Application.Restart();
                 Environment.Exit(10);
                 label1.Text = "";
             }
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

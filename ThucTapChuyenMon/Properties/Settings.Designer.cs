@@ -33,5 +33,16 @@ namespace ThucTapChuyenMon.Properties {
                 return ((string)(this["THUCTAPCHUYENMONConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DatabaseQLTS." +
+            "mdf;Integrated Security=True")]
+        public string DatabaseQLTSConnectionString {
+            get {
+                return ((string)(this["DatabaseQLTSConnectionString"]));
+            }
+        }
     }
 }

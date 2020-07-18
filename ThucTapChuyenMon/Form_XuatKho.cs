@@ -25,7 +25,7 @@ namespace ThucTapChuyenMon
         DataTable table = new DataTable();
         public void loadNL()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nl = quanli.NguyenLieux.ToList();
                 foreach (var item in ds_nl)
@@ -52,7 +52,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show("Chọn đầy đủ thông tin");
                 return;
             }    
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
 
                 if (cbnguyenlieu.Visible == true)
@@ -102,7 +102,7 @@ namespace ThucTapChuyenMon
         {
             if (cbnguyenlieu.SelectedIndex == -1)
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 txtdvt.Enabled = false;
                 txtdvt.Text = quanli.NguyenLieux.FirstOrDefault(p => p.TenNguyenLieu == cbnguyenlieu.SelectedItem.ToString()).DonViTinh;
@@ -112,7 +112,7 @@ namespace ThucTapChuyenMon
 
         private void bttach_Click(object sender, EventArgs e)
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 PhieuXuat px = new PhieuXuat();
                 px.TenDangNhap = username.Trim();

@@ -45,7 +45,7 @@ namespace ThucTapChuyenMon
             txtnoidung.Text = "Bắt đầu từ " + bd+ " đến " + kt + "\n Shenzen Milk Tea diễn ra sự kiện " +sukien + "\n Giảm giá " + giam + "% trên toàn menu. \n Hãy đến tham gia ngay";
             progressBar1.Minimum = 0;
             int sl = 0;
-            using(THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using(DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 sl = db.KhachHangs.Count();
             }    
@@ -66,7 +66,7 @@ namespace ThucTapChuyenMon
                 string ds_email = "";
                 FileInfo file = new FileInfo(label13.Text);
                 attachment = new Attachment(img);
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     List<KhachHang> kh = quanli.KhachHangs.ToList();
                     foreach (var item in kh)

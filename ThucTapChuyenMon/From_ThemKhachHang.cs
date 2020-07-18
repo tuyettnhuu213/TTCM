@@ -26,7 +26,7 @@ namespace ThucTapChuyenMon
 
         private void From_ThemKhachHang_Load(object sender, EventArgs e)
         {
-            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 List <Function_Result> khachhang = db.Function().ToList();
                 txtmakhachhang.Text = khachhang[0].MAKH;
@@ -50,7 +50,7 @@ namespace ThucTapChuyenMon
             } 
             else
             {
-                using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
                 {
                     KhachHang kh = db.KhachHangs.FirstOrDefault(p => p.SDT == txtsdt.Text.Trim());
                     if (kh != null)
@@ -67,7 +67,7 @@ namespace ThucTapChuyenMon
         {
             if(kiemtra() == true)
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
 
                     KhachHang kh = new KhachHang();

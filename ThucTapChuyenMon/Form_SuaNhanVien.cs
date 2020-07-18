@@ -64,7 +64,7 @@ namespace ThucTapChuyenMon
             txtsdt.Text = sdt;
             txtcmnd.Text = cmnd;
             txttendangnhap.Text = tendangnhap;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<ChucVu> ds_chucvu = quanli.ChucVus.ToList();
                 foreach (ChucVu item in ds_chucvu)
@@ -80,7 +80,7 @@ namespace ThucTapChuyenMon
         {
             if (!kiemtra())
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 NhanVien nv = quanli.NhanViens.FirstOrDefault(p => p.TenDangNhap == tendangnhap);
                 int macv = quanli.ChucVus.FirstOrDefault(p => p.TenChucVu == cbchucvu.SelectedItem.ToString()).IdChucVu;

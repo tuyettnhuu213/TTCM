@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -132,19 +132,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChucVu.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="CTDoUong.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="CTHoaDon.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="CTPhieuNhap.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="CTPhieuXuat.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs">
       <SubType>Form</SubType>
@@ -158,10 +158,16 @@
       <DependentUpon>DataSetHoaDon.xsd</DependentUpon>
     </Compile>
     <Compile Include="doanhso_Result.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="DoUong.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CaNhan.Designer.cs">
+      <DependentUpon>Form_CaNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_GuiMail.cs">
       <SubType>Form</SubType>
@@ -248,18 +254,33 @@
       <DependentUpon>From_ThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Function_Result.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="getdskhachhang_Result.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="HoaDon.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDon1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDon1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonNgay1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonNgay1.xsd</DependentUpon>
     </Compile>
     <Compile Include="HoaDonNgayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HoaDonNgayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonThang1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HoaDonThang1.xsd</DependentUpon>
     </Compile>
     <Compile Include="HoaDonThangDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -267,20 +288,20 @@
       <DependentUpon>HoaDonThangDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="KhachHang.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="LoaiDoUong.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="LoaiKhachHang.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="MetroFramework\MetroMessageBox.cs" />
     <Compile Include="NguyenLieu.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="NhanVien.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="page_banhang.cs">
       <SubType>UserControl</SubType>
@@ -325,7 +346,12 @@
       <DependentUpon>page_thongke.cs</DependentUpon>
     </Compile>
     <Compile Include="PhieuNhap.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuNhapNgay1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuNhapNgay1.xsd</DependentUpon>
     </Compile>
     <Compile Include="PhieuNhapNgayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -338,12 +364,22 @@
       <DependentUpon>PhieuNhapThangDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PhieuXuat.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatNgay1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuXuatNgay1.xsd</DependentUpon>
     </Compile>
     <Compile Include="PhieuXuatNgayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PhieuXuatNgayDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PhieuXuatThang1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuXuatThang1.xsd</DependentUpon>
     </Compile>
     <Compile Include="PhieuXuatThangDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -352,33 +388,60 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QUANLITRASUA.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QUANLITRASUA.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QUANLITRASUA.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QUANLITRASUA.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
-    </Compile>
     <Compile Include=".cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reporthoadon_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPHoaDonNgay_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPHoaDonThang_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPhoadon_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPPhieuNhapNgay_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPPhieuNhapThang_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPPhieuXuatMonth_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPPhieuXuatNgay_Result.cs">
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThucTapChuyenMon.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThucTapChuyenMon.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThucTapChuyenMon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThucTapChuyenMon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ThucTapChuyenMon.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Uudai.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <Compile Include="xuatdskhachhang_Result.cs">
-      <DependentUpon>QUANLITRASUA.tt</DependentUpon>
+      <DependentUpon>ThucTapChuyenMon.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CaNhan.resx">
+      <DependentUpon>Form_CaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_GuiMail.resx">
       <DependentUpon>Form_GuiMail.cs</DependentUpon>
@@ -471,6 +534,28 @@
     <None Include="DataSetHoaDon.xss">
       <DependentUpon>DataSetHoaDon.xsd</DependentUpon>
     </None>
+    <None Include="HoaDon1.xsc">
+      <DependentUpon>HoaDon1.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDon1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDon1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HoaDon1.xss">
+      <DependentUpon>HoaDon1.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonNgay1.xsc">
+      <DependentUpon>HoaDonNgay1.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonNgay1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonNgay1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HoaDonNgay1.xss">
+      <DependentUpon>HoaDonNgay1.xsd</DependentUpon>
+    </None>
     <None Include="HoaDonNgayDataSet.xsc">
       <DependentUpon>HoaDonNgayDataSet.xsd</DependentUpon>
     </None>
@@ -481,6 +566,17 @@
     </None>
     <None Include="HoaDonNgayDataSet.xss">
       <DependentUpon>HoaDonNgayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonThang1.xsc">
+      <DependentUpon>HoaDonThang1.xsd</DependentUpon>
+    </None>
+    <None Include="HoaDonThang1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HoaDonThang1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HoaDonThang1.xss">
+      <DependentUpon>HoaDonThang1.xsd</DependentUpon>
     </None>
     <None Include="HoaDonThangDataSet.xsc">
       <DependentUpon>HoaDonThangDataSet.xsd</DependentUpon>
@@ -494,6 +590,17 @@
       <DependentUpon>HoaDonThangDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="PhieuNhapNgay1.xsc">
+      <DependentUpon>PhieuNhapNgay1.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuNhapNgay1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuNhapNgay1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PhieuNhapNgay1.xss">
+      <DependentUpon>PhieuNhapNgay1.xsd</DependentUpon>
+    </None>
     <None Include="PhieuNhapNgayDataSet.xsc">
       <DependentUpon>PhieuNhapNgayDataSet.xsd</DependentUpon>
     </None>
@@ -516,6 +623,17 @@
     <None Include="PhieuNhapThangDataSet.xss">
       <DependentUpon>PhieuNhapThangDataSet.xsd</DependentUpon>
     </None>
+    <None Include="PhieuXuatNgay1.xsc">
+      <DependentUpon>PhieuXuatNgay1.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuXuatNgay1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuXuatNgay1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PhieuXuatNgay1.xss">
+      <DependentUpon>PhieuXuatNgay1.xsd</DependentUpon>
+    </None>
     <None Include="PhieuXuatNgayDataSet.xsc">
       <DependentUpon>PhieuXuatNgayDataSet.xsd</DependentUpon>
     </None>
@@ -526,6 +644,17 @@
     </None>
     <None Include="PhieuXuatNgayDataSet.xss">
       <DependentUpon>PhieuXuatNgayDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuXuatThang1.xsc">
+      <DependentUpon>PhieuXuatThang1.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuXuatThang1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuXuatThang1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PhieuXuatThang1.xss">
+      <DependentUpon>PhieuXuatThang1.xsd</DependentUpon>
     </None>
     <None Include="PhieuXuatThangDataSet.xsc">
       <DependentUpon>PhieuXuatThangDataSet.xsd</DependentUpon>
@@ -547,21 +676,36 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="ThucTapChuyenMon.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ThucTapChuyenMon.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ThucTapChuyenMon.edmx.diagram">
+      <DependentUpon>ThucTapChuyenMon.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MetroFramework.txt" />
-    <Content Include="QUANLITRASUA.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
-      <LastGenOutput>QUANLITRASUA.Context.cs</LastGenOutput>
+    <Content Include="DatabaseQLTS.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="QUANLITRASUA.tt">
+    <Content Include="DatabaseQLTS_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>DatabaseQLTS.mdf</DependentUpon>
+    </Content>
+    <Content Include="MetroFramework.txt" />
+    <None Include="Resources\cogwheel1.png" />
+    <Content Include="ThucTapChuyenMon.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
-      <LastGenOutput>QUANLITRASUA.cs</LastGenOutput>
+      <DependentUpon>ThucTapChuyenMon.edmx</DependentUpon>
+      <LastGenOutput>ThucTapChuyenMon.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ThucTapChuyenMon.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ThucTapChuyenMon.edmx</DependentUpon>
+      <LastGenOutput>ThucTapChuyenMon.cs</LastGenOutput>
     </Content>
     <None Include="Resources\milktea-mania-fb.jpg" />
     <None Include="Resources\f6af7a929f6a1f15734a656c8b173d5a.jpg" />
@@ -598,13 +742,6 @@
     <None Include="Resources\pngtree-background-of-japanese-fresh-pink-cherry-petals-image_88785.jpg" />
     <None Include="Resources\return.png" />
     <None Include="Resources\pay.png" />
-    <EntityDeploy Include="QUANLITRASUA.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QUANLITRASUA.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="QUANLITRASUA.edmx.diagram">
-      <DependentUpon>QUANLITRASUA.edmx</DependentUpon>
-    </None>
     <None Include="Resources\save %281%29.png" />
     <None Include="Resources\mathematics.png" />
     <None Include="Resources\trash %281%29.png" />

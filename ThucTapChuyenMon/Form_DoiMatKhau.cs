@@ -34,7 +34,7 @@ namespace ThucTapChuyenMon
                 loi.SetError(txtnhaplai, "Mật khẩu không khớp !");
                 return false;
             }
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 string mkcu = quanli.NhanViens.FirstOrDefault(p => p.TenDangNhap == username.Trim()).MatKhau.Trim();
                 if (mkcu != txtmkcu.Text)
@@ -59,7 +59,7 @@ namespace ThucTapChuyenMon
         {
             if (!kiemtra())
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 NhanVien lg = quanli.NhanViens.FirstOrDefault(p => p.TenDangNhap == username.Trim());
                 lg.MatKhau = txtmkmoi.Text;
@@ -71,6 +71,11 @@ namespace ThucTapChuyenMon
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form_DoiMatKhau_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

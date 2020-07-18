@@ -30,35 +30,35 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.RPhoadonBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetHoaDon = new ThucTapChuyenMon.DataSetHoaDon();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.RPhoadonTableAdapter = new ThucTapChuyenMon.DataSetHoaDonTableAdapters.RPhoadonTableAdapter();
+            this.HoaDon1 = new ThucTapChuyenMon.HoaDon1();
+            this.RPhoadonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.RPhoadonTableAdapter = new ThucTapChuyenMon.HoaDon1TableAdapters.RPhoadonTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDon1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPhoadonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetHoaDon)).BeginInit();
             this.SuspendLayout();
+            // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "HoaDon";
+            reportDataSource1.Value = this.RPhoadonBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_HoaDon.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(-3, -1);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(583, 766);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // HoaDon1
+            // 
+            this.HoaDon1.DataSetName = "HoaDon1";
+            this.HoaDon1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RPhoadonBindingSource
             // 
             this.RPhoadonBindingSource.DataMember = "RPhoadon";
-            this.RPhoadonBindingSource.DataSource = this.DataSetHoaDon;
-            // 
-            // DataSetHoaDon
-            // 
-            this.DataSetHoaDon.DataSetName = "DataSetHoaDon";
-            this.DataSetHoaDon.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DataSetHoaDon";
-            reportDataSource1.Value = this.RPhoadonBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_HoaDon.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(2, 1);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(578, 767);
-            this.reportViewer1.TabIndex = 0;
+            this.RPhoadonBindingSource.DataSource = this.HoaDon1;
             // 
             // RPhoadonTableAdapter
             // 
@@ -76,8 +76,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ThanhToan";
             this.Load += new System.EventHandler(this.Form_ThanhToan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDon1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPhoadonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetHoaDon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -86,7 +86,7 @@
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource RPhoadonBindingSource;
-        private DataSetHoaDon DataSetHoaDon;
-        private DataSetHoaDonTableAdapters.RPhoadonTableAdapter RPhoadonTableAdapter;
+        private HoaDon1 HoaDon1;
+        private HoaDon1TableAdapters.RPhoadonTableAdapter RPhoadonTableAdapter;
     }
 }

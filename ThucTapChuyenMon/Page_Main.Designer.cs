@@ -30,65 +30,38 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btndoimatkhau = new Bunifu.Framework.UI.BunifuImageButton();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlbutton = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnquanlikho = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnkhachhang = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnthongke = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnnhanvien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnthucdon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btntrangchu = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btndoimatkhau)).BeginInit();
             this.pnlbutton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Controls.Add(this.bunifuImageButton1);
-            this.panel1.Controls.Add(this.btndoimatkhau);
+            this.panel1.Controls.Add(this.statusStrip1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1442, 47);
+            this.panel1.Size = new System.Drawing.Size(1442, 80);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::ThucTapChuyenMon.Properties.Resources.exit;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1342, 6);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(43, 38);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bunifuImageButton1.TabIndex = 2;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
-            // 
-            // btndoimatkhau
-            // 
-            this.btndoimatkhau.BackColor = System.Drawing.Color.Transparent;
-            this.btndoimatkhau.Image = global::ThucTapChuyenMon.Properties.Resources.cogwheel;
-            this.btndoimatkhau.ImageActive = null;
-            this.btndoimatkhau.Location = new System.Drawing.Point(1391, 6);
-            this.btndoimatkhau.Name = "btndoimatkhau";
-            this.btndoimatkhau.Size = new System.Drawing.Size(40, 41);
-            this.btndoimatkhau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btndoimatkhau.TabIndex = 1;
-            this.btndoimatkhau.TabStop = false;
-            this.btndoimatkhau.Zoom = 10;
-            this.btndoimatkhau.Click += new System.EventHandler(this.btndoimatkhau_Click);
             // 
             // label1
             // 
@@ -109,11 +82,46 @@
             this.pnlbutton.Controls.Add(this.btnnhanvien);
             this.pnlbutton.Controls.Add(this.btnthucdon);
             this.pnlbutton.Controls.Add(this.btntrangchu);
-            this.pnlbutton.Location = new System.Drawing.Point(1, 765);
+            this.pnlbutton.Location = new System.Drawing.Point(1, 798);
             this.pnlbutton.Name = "pnlbutton";
-            this.pnlbutton.Size = new System.Drawing.Size(1442, 101);
+            this.pnlbutton.Size = new System.Drawing.Size(1364, 101);
             this.pnlbutton.TabIndex = 1;
             this.pnlbutton.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlbutton_Paint);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel2.Location = new System.Drawing.Point(1, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1442, 720);
+            this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // error
+            // 
+            this.error.ContainerControl = this;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.Color.LightPink;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.OwnerDraw = true;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.StripAmpersands = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.statusStrip1.Location = new System.Drawing.Point(1309, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(133, 80);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "Tài khoản";
             // 
             // btnquanlikho
             // 
@@ -331,33 +339,51 @@
             this.toolTip1.SetToolTip(this.btntrangchu, "Trang chủ bán hàng");
             this.btntrangchu.Click += new System.EventHandler(this.btntrangchu_Click);
             // 
-            // panel2
+            // toolStripDropDownButton1
             // 
-            this.panel2.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel2.Location = new System.Drawing.Point(1, 45);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1442, 720);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.toolStripDropDownButton1.AutoSize = false;
+            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đổiMậtKhẩuToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem1});
+            this.toolStripDropDownButton1.Image = global::ThucTapChuyenMon.Properties.Resources.cogwheel1;
+            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Black;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.RightToLeftAutoMirrorImage = true;
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(70, 56);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
             // 
-            // error
+            // đổiMậtKhẩuToolStripMenuItem
             // 
-            this.error.ContainerControl = this;
+            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Thông tin tài khoản";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
-            // toolTip1
+            // đăngXuấtToolStripMenuItem
             // 
-            this.toolTip1.BackColor = System.Drawing.Color.LightPink;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.OwnerDraw = true;
-            this.toolTip1.ShowAlways = true;
-            this.toolTip1.StripAmpersands = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
+            // đăngXuấtToolStripMenuItem1
+            // 
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
             // Page_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1444, 860);
+            this.ClientSize = new System.Drawing.Size(1446, 906);
             this.Controls.Add(this.pnlbutton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -370,10 +396,10 @@
             this.Load += new System.EventHandler(this.Page_Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btndoimatkhau)).EndInit();
             this.pnlbutton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -390,9 +416,12 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnnhanvien;
         private Bunifu.Framework.UI.BunifuFlatButton btnthucdon;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuImageButton btndoimatkhau;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.ErrorProvider error;
         public System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem1;
     }
 }

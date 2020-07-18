@@ -19,7 +19,7 @@ namespace ThucTapChuyenMon
         public void loadLoaiDU()
         {
             btluu.Enabled = true;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 DataTable table = new DataTable();
                 table.Columns.Add("maloai");
@@ -45,7 +45,7 @@ namespace ThucTapChuyenMon
                     return;
                 } else
                 {
-                  using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                  using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                   {
                     quanli.themloaidouong(txtloai.Text);
                     quanli.SaveChanges();
@@ -64,7 +64,7 @@ namespace ThucTapChuyenMon
                 return;
             } else
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     LoaiDoUong loai = quanli.LoaiDoUongs.FirstOrDefault(p => p.IdLoai == mloai);
                     loai.TenLoai = txtloai.Text;
@@ -95,7 +95,7 @@ namespace ThucTapChuyenMon
             {
                 if (MessageBox.Show(this, "Bạn có muốn xóa loại đồ uống này không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                    using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                     {
                         DoUong du = quanli.DoUongs.FirstOrDefault(p => p.IdLoai == mloai);
                         if (du != null)

@@ -36,7 +36,7 @@ namespace ThucTapChuyenMon
         public void loadgiamgia()
         {
             DateTime now = DateTime.Now;
-            using(THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using(DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<Uudai> ds_uudai = quanli.Uudais.ToList();
                 foreach(var item in ds_uudai)
@@ -54,7 +54,7 @@ namespace ThucTapChuyenMon
         {
             panelhinhanh.Controls.Clear();
             int i = 0;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<DoUong> ds_douong = quanli.DoUongs.Where(p => p.IdLoai == maloai).ToList();
                 int dem = ds_douong.Count % 5;
@@ -127,7 +127,7 @@ namespace ThucTapChuyenMon
             BunifuImageButton img = sender as BunifuImageButton;
             matd = int.Parse(img.Name);
             loadsize(matd);
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<DoUong> ds_douong = quanli.DoUongs.ToList();
                 for (int i = 0; i < ds_douong.Count; i++)
@@ -145,7 +145,7 @@ namespace ThucTapChuyenMon
         public void loadsize(int matd)
         {
             cbsize.Items.Clear();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<CTDoUong> ds_size = quanli.CTDoUongs.Where(p => p.IdDoUong == matd).ToList();
                 foreach (var item in ds_size)
@@ -165,7 +165,7 @@ namespace ThucTapChuyenMon
             makh = a;
             if (makh != null)
             {
-                using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
                 {
                     KhachHang kh = db.KhachHangs.FirstOrDefault(p => p.IdKhachHang == makh);
                     if (kh != null)
@@ -211,7 +211,7 @@ namespace ThucTapChuyenMon
                     textBox1.Text = result.ToString();
                     if(textBox1.Text!=null)
                     {
-                        using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                        using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                         {
                             KhachHang kh = quanli.KhachHangs.Where(p => p.IdKhachHang == textBox1.Text).FirstOrDefault();
                             {
@@ -238,7 +238,7 @@ namespace ThucTapChuyenMon
         private void formclose(object sender, FormClosedEventArgs e)
         {
             loaddanhmuc();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<DoUong> doUongs = quanli.DoUongs.ToList();
                 foreach (var item in doUongs)
@@ -270,7 +270,7 @@ namespace ThucTapChuyenMon
             loaddanhmuc();
             txtuser.Text = username;
             lbidkh.Text = makh;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<DoUong> doUongs = quanli.DoUongs.ToList();
                 foreach(var item in doUongs)
@@ -292,7 +292,7 @@ namespace ThucTapChuyenMon
         public void loaddanhmuc()
         {
             dgvhoadon.Controls.Clear();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<LoaiDoUong> ds_loaidu = quanli.LoaiDoUongs.ToList();
                 int a = dgvhoadon.Width / (ds_loaidu.Count + 1);
@@ -357,7 +357,7 @@ namespace ThucTapChuyenMon
                 item.Normalcolor = Color.IndianRed;
             }
             bt.Normalcolor = Color.Black;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 int madu = quanli.LoaiDoUongs.FirstOrDefault(p => p.TenLoai == bt.Text).IdLoai;
                 loadhinh(madu);
@@ -372,7 +372,7 @@ namespace ThucTapChuyenMon
         {
             if (cbsize.SelectedIndex == -1)
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 string size = cbsize.SelectedItem.ToString();
                 txtdongia.Text = quanli.CTDoUongs.FirstOrDefault(p => p.IdDoUong == matd && p.Size == size).DonGia.ToString();
@@ -421,7 +421,7 @@ namespace ThucTapChuyenMon
         {
             if (cbDoUong.SelectedIndex == -1)
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 string tendu = cbDoUong.SelectedItem.ToString();
                 int madu = quanli.DoUongs.FirstOrDefault(p => p.TenDoUong == tendu).Id;
@@ -446,8 +446,8 @@ namespace ThucTapChuyenMon
             txttien.Text = "0";
             cbsoluong.Value = 1;
             txtkhachhang.Text = "";
-            txtsaugiam.Text = "";
-            txtgiamgia.Text = "";
+            txtsaugiam.Text = "0";
+            txtgiamgia.Text = "0";
             lbtenkhachhang.Text = "";
             lbidkh.Text = "";
             lbdiemtichluy.Text = "";
@@ -471,7 +471,7 @@ namespace ThucTapChuyenMon
             }
             else
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     HoaDon hd = new HoaDon();
                     quanli.HoaDons.Add(hd);
@@ -553,7 +553,7 @@ namespace ThucTapChuyenMon
         {
             if(txtkhachhang!=null)
             {
-                using(THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using(DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     KhachHang kh = quanli.KhachHangs.FirstOrDefault(p => p.SDT == txtkhachhang.Text);
                     if(kh!=null)

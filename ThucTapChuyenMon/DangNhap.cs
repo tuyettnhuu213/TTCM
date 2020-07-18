@@ -66,7 +66,7 @@ namespace ThucTapChuyenMon
                     txtpass.Focus();
                     return;
                 }
-            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 NhanVien lg = db.NhanViens.Where(p => p.TenDangNhap == txtname.Text && p.MatKhau == txtpass.Text.Trim()).FirstOrDefault();
                 if (lg == null)
@@ -119,7 +119,7 @@ namespace ThucTapChuyenMon
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 NhanVien lg = db.NhanViens.Where(p => p.TenDangNhap == txtname.Text && p.MatKhau == txtpass.Text.Trim()).FirstOrDefault();
                 if (lg == null)

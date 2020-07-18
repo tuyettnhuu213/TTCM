@@ -24,7 +24,7 @@ namespace ThucTapChuyenMon
             lvthucdon.Items.Clear();
             lvthucdon.Groups.Clear();
             List<LoaiDoUong> ds_Loaidouong = new List<LoaiDoUong>();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 ds_Loaidouong = quanli.LoaiDoUongs.ToList();
                 foreach (LoaiDoUong item in ds_Loaidouong)
@@ -53,7 +53,7 @@ namespace ThucTapChuyenMon
         }
         public void Load_Loai()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 cbloai.DataSource = quanli.LoaiDoUongs.ToList();
                 cbloai.DisplayMember = "TenLoai";
@@ -63,7 +63,7 @@ namespace ThucTapChuyenMon
          public void LoadSize(int id)
         {
             cbsize.Items.Clear();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<CTDoUong> ds_douong = quanli.CTDoUongs.Where(p => p.IdDoUong == id).ToList();
                 if(ds_douong!=null)
@@ -80,7 +80,7 @@ namespace ThucTapChuyenMon
         }
         public void load_gia(int id, string size)
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<CTDoUong> ds_douong = quanli.CTDoUongs.Where(p => p.IdDoUong == id).ToList();
                 foreach (CTDoUong item in ds_douong)
@@ -98,7 +98,7 @@ namespace ThucTapChuyenMon
             Load_Loai();
             reset();
             txtgia.Enabled = false;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 ds_douong = quanli.DoUongs.ToList();
             }
@@ -238,7 +238,7 @@ namespace ThucTapChuyenMon
                 FileStream stream = new FileStream(img, FileMode.Open, FileAccess.Read);
                 BinaryReader brs = new BinaryReader(stream);
                 images = brs.ReadBytes((int)stream.Length);
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
 
                     int maloai = quanli.LoaiDoUongs.FirstOrDefault(p => p.TenLoai == cbloai.Text).IdLoai;
@@ -252,7 +252,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show(this, "Đã Lưu !", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Napdatalist();
                 ds_douong.Clear();
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     ds_douong = quanli.DoUongs.ToList();
                 }
@@ -335,7 +335,7 @@ namespace ThucTapChuyenMon
             }
             else
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {                   
                     int maloai = quanli.LoaiDoUongs.FirstOrDefault(p => p.TenLoai == cbloai.Text).IdLoai;
                     DoUong du = quanli.DoUongs.FirstOrDefault(p => p.Id == madouong);
@@ -365,6 +365,12 @@ namespace ThucTapChuyenMon
         {
             Napdatalist();
             Load_Loai();
+            reset();
+            txtgia.Enabled = false;
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
+            {
+                ds_douong = quanli.DoUongs.ToList();
+            }
         }
         private void btxoa_Click(object sender, EventArgs e)
         {
@@ -375,7 +381,7 @@ namespace ThucTapChuyenMon
             }
             if (MessageBox.Show(this, "Bạn có muốn xóa đồ uống này không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     CTHoaDon ct_hd = quanli.CTHoaDons.FirstOrDefault(p => p.IdDoUong == madouong);
                     if (ct_hd != null)
@@ -444,7 +450,7 @@ namespace ThucTapChuyenMon
             lvthucdon.Items.Clear();
             lvthucdon.Groups.Clear();
             List<LoaiDoUong> ds_Loaidouong = new List<LoaiDoUong>();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 ds_Loaidouong = quanli.LoaiDoUongs.ToList();
                 foreach (LoaiDoUong item in ds_Loaidouong)

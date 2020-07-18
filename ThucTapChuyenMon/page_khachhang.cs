@@ -41,7 +41,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("DiemTichLuy");
             table.Columns.Add("TenLoai");
 
-            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 List<KhachHang> ds_kh = db.KhachHangs.ToList();
                 if(maloai == 0)
@@ -97,7 +97,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("TenLoai");
             table.Columns.Add("GiamGia");
 
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<LoaiKhachHang> ds_nguyenlieu = quanli.LoaiKhachHangs.ToList();
                 foreach (var item in ds_nguyenlieu)
@@ -130,7 +130,7 @@ namespace ThucTapChuyenMon
 
         private void btnView_Click(object sender, EventArgs e)
         {
-            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 if (rdVang.Checked)
 
@@ -189,7 +189,7 @@ namespace ThucTapChuyenMon
                 }
                 else
                 {
-                    using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+                    using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
                     {
 
                         LoaiKhachHang lt = db.LoaiKhachHangs.FirstOrDefault(p => p.IdLoai.ToString() == txtMa.Text);
@@ -230,7 +230,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("SDT");
             table.Columns.Add("TenLoai");
             table.Columns.Add("DiemTichLuy");
-            using(THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using(DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<KhachHang> ds_px = quanli.KhachHangs.ToList();
                 foreach (var item in ds_px)
@@ -294,7 +294,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("NgayBatDau");
             table.Columns.Add("NgayKetThuc");
             table.Columns.Add("GiamGia");
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<Uudai> ds_uudai = quanli.Uudais.ToList();
                foreach( var item in ds_uudai)
@@ -332,7 +332,7 @@ namespace ThucTapChuyenMon
             {
                if(MessageBox.Show("Bạn có muốn xóa sự kiện này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
                 {
-                    using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                    using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                     {
                         Uudai uudai = quanli.Uudais.FirstOrDefault(p => p.IdUuDai.ToString() == mauudai);
                         quanli.Uudais.Remove(uudai);
@@ -381,7 +381,7 @@ namespace ThucTapChuyenMon
             if (btnthemud.Text == "Làm mới")
             {
                
-                using(THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using(DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     Uudai uudai = quanli.Uudais.FirstOrDefault(p => p.IdUuDai.ToString() == txtidud.Text.Trim());
                     uudai.TenUuDai = txttenud.Text;
@@ -396,7 +396,7 @@ namespace ThucTapChuyenMon
             }
             else
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     quanli.themsukien(txttenud.Text, dtngaybd.Value, dtngaykt.Value, float.Parse(txtgiamud.Text));
                     quanli.SaveChanges();
@@ -490,7 +490,11 @@ namespace ThucTapChuyenMon
         {
             
           
-        }      
-      
+        }
+
+        private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

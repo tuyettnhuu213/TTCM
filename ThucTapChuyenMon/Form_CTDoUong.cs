@@ -25,10 +25,9 @@ namespace ThucTapChuyenMon
             InitializeComponent();
         }
         public void loadchitiet()
-        {
-            btluu.Enabled = false;
+        {        
            
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 DataTable table = new DataTable();
                 table.Columns.Add("size");
@@ -46,8 +45,7 @@ namespace ThucTapChuyenMon
             txtsize.Focus();
         }
         void reset()
-        {
-            btluu.Enabled = false;
+        {          
             txtgia.Text = "";
             txtsize.Text = "";
         }
@@ -81,7 +79,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show("yêu cầu nhập size!");
                 return;
             }
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 CTDoUong ct = new CTDoUong();
                 ct.IdDoUong = masp;
@@ -113,8 +111,8 @@ namespace ThucTapChuyenMon
         }
 
         private void btluu_Click(object sender, EventArgs e)
-        {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+        {           
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 if (txtgia.Text.Trim() == "")
                 {
@@ -128,7 +126,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show("Đã Lưu !", "Lưu", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadchitiet();
                 reset();
-            }
+            }                     
         }
 
         private void dgvloai_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -145,7 +143,7 @@ namespace ThucTapChuyenMon
             {
                 if (MessageBox.Show(this, "Bạn có muốn xóa đồ uống này không ?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                    using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                     {
                         CTHoaDon ct_hd = quanli.CTHoaDons.FirstOrDefault(p => p.IdDoUong == masp && p.Size == size);
                         if (ct_hd != null)

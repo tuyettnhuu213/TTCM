@@ -62,7 +62,7 @@ namespace ThucTapChuyenMon
         {
             if (!kiemtra())
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                KhachHang kh = quanli.KhachHangs.FirstOrDefault(p => p.IdKhachHang == makh);
 
@@ -86,7 +86,7 @@ namespace ThucTapChuyenMon
             txtsdt.Text = sdt;
             txtten.Focus();
             string barcode = "";
-            using (THUCTAPCHUYENMONEntities db = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities db = new DatabaseQLTSEntities())
             {
                 barcode = db.KhachHangs.FirstOrDefault(p => p.SDT == sdt).IdKhachHang ;
             }    

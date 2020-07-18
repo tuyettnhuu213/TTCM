@@ -32,7 +32,7 @@ namespace ThucTapChuyenMon
 
         private void Form_ThemNhanVien_Load(object sender, EventArgs e)
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<ChucVu> ds_chucvu = quanli.ChucVus.ToList();
                 foreach (ChucVu item in ds_chucvu)
@@ -47,7 +47,7 @@ namespace ThucTapChuyenMon
         {
             if (!kiemtra())
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 int macv = quanli.ChucVus.FirstOrDefault(p => p.TenChucVu == cbchucvu.SelectedItem.ToString()).IdChucVu;
                 NhanVien nv = new NhanVien();

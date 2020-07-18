@@ -25,10 +25,12 @@ namespace ThucTapChuyenMon
         public int Mahd { get => mahd; set => mahd = value; }
 
         private void Form_ThanhToan_Load(object sender, EventArgs e)
-        {  
-            this.RPhoadonTableAdapter.Fill(this.DataSetHoaDon.RPhoadon,mahd);
+        {
+            // TODO: This line of code loads data into the 'HoaDon1.RPhoadon' table. You can move, or remove it, as needed.
+            this.RPhoadonTableAdapter.Fill(this.HoaDon1.RPhoadon, mahd);
+
             this.reportViewer1.RefreshReport();
         }
-        
+
     }
 }

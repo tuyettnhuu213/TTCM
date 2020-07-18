@@ -30,35 +30,35 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(page_thongke));
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource13 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource14 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource15 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource16 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource17 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource18 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.RPPhieuNhapNgayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PhieuNhapNgayDataSet = new ThucTapChuyenMon.PhieuNhapNgayDataSet();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource5 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource6 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.RPHoaDonNgayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.HoaDonNgay1 = new ThucTapChuyenMon.HoaDonNgay1();
             this.RPHoaDonThangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.HoaDonThangDataSet = new ThucTapChuyenMon.HoaDonThangDataSet();
+            this.HoaDonThang1 = new ThucTapChuyenMon.HoaDonThang1();
+            this.RPPhieuNhapNgayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PhieuNhapNgay1 = new ThucTapChuyenMon.PhieuNhapNgay1();
             this.RPPhieuNhapThangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PhieuNhapThangDataSet = new ThucTapChuyenMon.PhieuNhapThangDataSet();
             this.RPPhieuXuatNgayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PhieuXuatNgayDataSet = new ThucTapChuyenMon.PhieuXuatNgayDataSet();
+            this.PhieuXuatNgay1 = new ThucTapChuyenMon.PhieuXuatNgay1();
             this.RPPhieuXuatMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PhieuXuatThangDataSet = new ThucTapChuyenMon.PhieuXuatThangDataSet();
-            this.RPHoaDonNgayBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.HoaDonNgayDataSet = new ThucTapChuyenMon.HoaDonNgayDataSet();
+            this.PhieuXuatThang1 = new ThucTapChuyenMon.PhieuXuatThang1();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.reportPhieuNhapThang = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportHoaDonThang = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportPhieuNhapNgay = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportphieuxuatthang = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportphieuxuatngay = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportphieunhapthang = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportphieunhapngay = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reporthoadonthang = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reporthoadonngay = new Microsoft.Reporting.WinForms.ReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.rbthang = new System.Windows.Forms.RadioButton();
@@ -70,24 +70,24 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbnam = new System.Windows.Forms.ComboBox();
             this.viewluong = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.RPPhieuXuatMonthTableAdapter = new ThucTapChuyenMon.PhieuXuatThangDataSetTableAdapters.RPPhieuXuatMonthTableAdapter();
-            this.RPPhieuXuatNgayTableAdapter = new ThucTapChuyenMon.PhieuXuatNgayDataSetTableAdapters.RPPhieuXuatNgayTableAdapter();
+            this.RPPhieuXuatMonthTableAdapter = new ThucTapChuyenMon.PhieuXuatThang1TableAdapters.RPPhieuXuatMonthTableAdapter();
+            this.RPPhieuXuatNgayTableAdapter = new ThucTapChuyenMon.PhieuXuatNgay1TableAdapters.RPPhieuXuatNgayTableAdapter();
             this.RPPhieuNhapThangTableAdapter = new ThucTapChuyenMon.PhieuNhapThangDataSetTableAdapters.RPPhieuNhapThangTableAdapter();
-            this.RPHoaDonThangTableAdapter = new ThucTapChuyenMon.HoaDonThangDataSetTableAdapters.RPHoaDonThangTableAdapter();
-            this.RPHoaDonNgayTableAdapter = new ThucTapChuyenMon.HoaDonNgayDataSetTableAdapters.RPHoaDonNgayTableAdapter();
-            this.RPPhieuNhapNgayTableAdapter = new ThucTapChuyenMon.PhieuNhapNgayDataSetTableAdapters.RPPhieuNhapNgayTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.RPPhieuNhapNgayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhieuNhapNgayDataSet)).BeginInit();
+            this.RPPhieuNhapNgayTableAdapter = new ThucTapChuyenMon.PhieuNhapNgay1TableAdapters.RPPhieuNhapNgayTableAdapter();
+            this.RPHoaDonThangTableAdapter = new ThucTapChuyenMon.HoaDonThang1TableAdapters.RPHoaDonThangTableAdapter();
+            this.RPHoaDonNgayTableAdapter = new ThucTapChuyenMon.HoaDonNgay1TableAdapters.RPHoaDonNgayTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.RPHoaDonNgayBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonNgay1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPHoaDonThangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HoaDonThangDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonThang1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RPPhieuNhapNgayBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhieuNhapNgay1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPhieuNhapThangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuNhapThangDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPhieuXuatNgayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatNgayDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatNgay1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPhieuXuatMonthBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatThangDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RPHoaDonNgayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HoaDonNgayDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatThang1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -95,25 +95,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.doanhso)).BeginInit();
             this.SuspendLayout();
             // 
-            // RPPhieuNhapNgayBindingSource
+            // RPHoaDonNgayBindingSource
             // 
-            this.RPPhieuNhapNgayBindingSource.DataMember = "RPPhieuNhapNgay";
-            this.RPPhieuNhapNgayBindingSource.DataSource = this.PhieuNhapNgayDataSet;
+            this.RPHoaDonNgayBindingSource.DataMember = "RPHoaDonNgay";
+            this.RPHoaDonNgayBindingSource.DataSource = this.HoaDonNgay1;
             // 
-            // PhieuNhapNgayDataSet
+            // HoaDonNgay1
             // 
-            this.PhieuNhapNgayDataSet.DataSetName = "PhieuNhapNgayDataSet";
-            this.PhieuNhapNgayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.HoaDonNgay1.DataSetName = "HoaDonNgay1";
+            this.HoaDonNgay1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RPHoaDonThangBindingSource
             // 
             this.RPHoaDonThangBindingSource.DataMember = "RPHoaDonThang";
-            this.RPHoaDonThangBindingSource.DataSource = this.HoaDonThangDataSet;
+            this.RPHoaDonThangBindingSource.DataSource = this.HoaDonThang1;
             // 
-            // HoaDonThangDataSet
+            // HoaDonThang1
             // 
-            this.HoaDonThangDataSet.DataSetName = "HoaDonThangDataSet";
-            this.HoaDonThangDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.HoaDonThang1.DataSetName = "HoaDonThang1";
+            this.HoaDonThang1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // RPPhieuNhapNgayBindingSource
+            // 
+            this.RPPhieuNhapNgayBindingSource.DataMember = "RPPhieuNhapNgay";
+            this.RPPhieuNhapNgayBindingSource.DataSource = this.PhieuNhapNgay1;
+            // 
+            // PhieuNhapNgay1
+            // 
+            this.PhieuNhapNgay1.DataSetName = "PhieuNhapNgay1";
+            this.PhieuNhapNgay1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RPPhieuNhapThangBindingSource
             // 
@@ -128,32 +138,22 @@
             // RPPhieuXuatNgayBindingSource
             // 
             this.RPPhieuXuatNgayBindingSource.DataMember = "RPPhieuXuatNgay";
-            this.RPPhieuXuatNgayBindingSource.DataSource = this.PhieuXuatNgayDataSet;
+            this.RPPhieuXuatNgayBindingSource.DataSource = this.PhieuXuatNgay1;
             // 
-            // PhieuXuatNgayDataSet
+            // PhieuXuatNgay1
             // 
-            this.PhieuXuatNgayDataSet.DataSetName = "PhieuXuatNgayDataSet";
-            this.PhieuXuatNgayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.PhieuXuatNgay1.DataSetName = "PhieuXuatNgay1";
+            this.PhieuXuatNgay1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // RPPhieuXuatMonthBindingSource
             // 
             this.RPPhieuXuatMonthBindingSource.DataMember = "RPPhieuXuatMonth";
-            this.RPPhieuXuatMonthBindingSource.DataSource = this.PhieuXuatThangDataSet;
+            this.RPPhieuXuatMonthBindingSource.DataSource = this.PhieuXuatThang1;
             // 
-            // PhieuXuatThangDataSet
+            // PhieuXuatThang1
             // 
-            this.PhieuXuatThangDataSet.DataSetName = "PhieuXuatThangDataSet";
-            this.PhieuXuatThangDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // RPHoaDonNgayBindingSource
-            // 
-            this.RPHoaDonNgayBindingSource.DataMember = "RPHoaDonNgay";
-            this.RPHoaDonNgayBindingSource.DataSource = this.HoaDonNgayDataSet;
-            // 
-            // HoaDonNgayDataSet
-            // 
-            this.HoaDonNgayDataSet.DataSetName = "HoaDonNgayDataSet";
-            this.HoaDonNgayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.PhieuXuatThang1.DataSetName = "PhieuXuatThang1";
+            this.PhieuXuatThang1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPane1
             // 
@@ -166,28 +166,29 @@
             this.tabNavigationPage1,
             this.tabNavigationPage2});
             this.tabPane1.RegularSize = new System.Drawing.Size(1442, 720);
-            this.tabPane1.SelectedPage = this.tabNavigationPage2;
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.Size = new System.Drawing.Size(1442, 720);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
+            this.tabPane1.Click += new System.EventHandler(this.tabPane1_Click);
             // 
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Appearance.BackColor = System.Drawing.Color.PeachPuff;
             this.tabNavigationPage1.Appearance.Options.UseBackColor = true;
             this.tabNavigationPage1.Caption = "Thống kê";
-            this.tabNavigationPage1.Controls.Add(this.reportPhieuNhapThang);
-            this.tabNavigationPage1.Controls.Add(this.reportHoaDonThang);
-            this.tabNavigationPage1.Controls.Add(this.reportPhieuNhapNgay);
-            this.tabNavigationPage1.Controls.Add(this.reportViewer3);
-            this.tabNavigationPage1.Controls.Add(this.reportViewer2);
-            this.tabNavigationPage1.Controls.Add(this.reportViewer1);
+            this.tabNavigationPage1.Controls.Add(this.reportphieunhapngay);
+            this.tabNavigationPage1.Controls.Add(this.reporthoadonthang);
+            this.tabNavigationPage1.Controls.Add(this.reporthoadonngay);
             this.tabNavigationPage1.Controls.Add(this.label1);
             this.tabNavigationPage1.Controls.Add(this.comboBox1);
             this.tabNavigationPage1.Controls.Add(this.rbthang);
             this.tabNavigationPage1.Controls.Add(this.rbngay);
             this.tabNavigationPage1.Controls.Add(this.dtngay);
             this.tabNavigationPage1.Controls.Add(this.btnhoadon);
+            this.tabNavigationPage1.Controls.Add(this.reportphieuxuatthang);
+            this.tabNavigationPage1.Controls.Add(this.reportphieuxuatngay);
+            this.tabNavigationPage1.Controls.Add(this.reportphieunhapthang);
             this.tabNavigationPage1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("tabNavigationPage1.ImageOptions.SvgImage")));
             this.tabNavigationPage1.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.tabNavigationPage1.Name = "tabNavigationPage1";
@@ -195,77 +196,77 @@
             this.tabNavigationPage1.Size = new System.Drawing.Size(1442, 663);
             this.tabNavigationPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabNavigationPage1_Paint);
             // 
-            // reportPhieuNhapThang
+            // reportphieuxuatthang
             // 
-            reportDataSource13.Name = "DataSetPhieuNhapNgay";
-            reportDataSource13.Value = this.RPPhieuNhapNgayBindingSource;
-            this.reportPhieuNhapThang.LocalReport.DataSources.Add(reportDataSource13);
-            this.reportPhieuNhapThang.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuNhapThangrdlc.rdlc";
-            this.reportPhieuNhapThang.Location = new System.Drawing.Point(-1, 134);
-            this.reportPhieuNhapThang.Name = "reportPhieuNhapThang";
-            this.reportPhieuNhapThang.ServerReport.BearerToken = null;
-            this.reportPhieuNhapThang.Size = new System.Drawing.Size(1442, 515);
-            this.reportPhieuNhapThang.TabIndex = 42;
+            reportDataSource4.Name = "PhieuXuatThang";
+            reportDataSource4.Value = this.RPPhieuXuatMonthBindingSource;
+            this.reportphieuxuatthang.LocalReport.DataSources.Add(reportDataSource4);
+            this.reportphieuxuatthang.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuXuatThang.rdlc";
+            this.reportphieuxuatthang.Location = new System.Drawing.Point(4, 110);
+            this.reportphieuxuatthang.Name = "reportphieuxuatthang";
+            this.reportphieuxuatthang.ServerReport.BearerToken = null;
+            this.reportphieuxuatthang.Size = new System.Drawing.Size(1435, 484);
+            this.reportphieuxuatthang.TabIndex = 42;
             // 
-            // reportHoaDonThang
+            // reportphieuxuatngay
             // 
-            reportDataSource14.Name = "DataSetHoaDonThang";
-            reportDataSource14.Value = this.RPHoaDonThangBindingSource;
-            this.reportHoaDonThang.LocalReport.DataSources.Add(reportDataSource14);
-            this.reportHoaDonThang.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_HoaDonThang.rdlc";
-            this.reportHoaDonThang.Location = new System.Drawing.Point(0, 134);
-            this.reportHoaDonThang.Name = "reportHoaDonThang";
-            this.reportHoaDonThang.ServerReport.BearerToken = null;
-            this.reportHoaDonThang.Size = new System.Drawing.Size(1442, 515);
-            this.reportHoaDonThang.TabIndex = 41;
+            reportDataSource5.Name = "PhieuXuatNgay1";
+            reportDataSource5.Value = this.RPPhieuXuatNgayBindingSource;
+            this.reportphieuxuatngay.LocalReport.DataSources.Add(reportDataSource5);
+            this.reportphieuxuatngay.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuXuatNgay.rdlc";
+            this.reportphieuxuatngay.Location = new System.Drawing.Point(4, 110);
+            this.reportphieuxuatngay.Name = "reportphieuxuatngay";
+            this.reportphieuxuatngay.ServerReport.BearerToken = null;
+            this.reportphieuxuatngay.Size = new System.Drawing.Size(1435, 503);
+            this.reportphieuxuatngay.TabIndex = 41;
             // 
-            // reportPhieuNhapNgay
+            // reportphieunhapthang
             // 
-            reportDataSource15.Name = "DataSetPhieuNhapThang";
-            reportDataSource15.Value = this.RPPhieuNhapThangBindingSource;
-            this.reportPhieuNhapNgay.LocalReport.DataSources.Add(reportDataSource15);
-            this.reportPhieuNhapNgay.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuNhapNgayrdlc.rdlc";
-            this.reportPhieuNhapNgay.Location = new System.Drawing.Point(0, 134);
-            this.reportPhieuNhapNgay.Name = "reportPhieuNhapNgay";
-            this.reportPhieuNhapNgay.ServerReport.BearerToken = null;
-            this.reportPhieuNhapNgay.Size = new System.Drawing.Size(1442, 515);
-            this.reportPhieuNhapNgay.TabIndex = 40;
+            reportDataSource6.Name = "PhieuNhapThang1";
+            reportDataSource6.Value = this.RPPhieuNhapThangBindingSource;
+            this.reportphieunhapthang.LocalReport.DataSources.Add(reportDataSource6);
+            this.reportphieunhapthang.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuNhapThangrdlc.rdlc";
+            this.reportphieunhapthang.Location = new System.Drawing.Point(4, 110);
+            this.reportphieunhapthang.Name = "reportphieunhapthang";
+            this.reportphieunhapthang.ServerReport.BearerToken = null;
+            this.reportphieunhapthang.Size = new System.Drawing.Size(1435, 408);
+            this.reportphieunhapthang.TabIndex = 40;
             // 
-            // reportViewer3
+            // reportphieunhapngay
             // 
-            reportDataSource16.Name = "DataSetPhieuXuatNgay";
-            reportDataSource16.Value = this.RPPhieuXuatNgayBindingSource;
-            this.reportViewer3.LocalReport.DataSources.Add(reportDataSource16);
-            this.reportViewer3.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuXuatNgay.rdlc";
-            this.reportViewer3.Location = new System.Drawing.Point(0, 134);
-            this.reportViewer3.Name = "reportViewer3";
-            this.reportViewer3.ServerReport.BearerToken = null;
-            this.reportViewer3.Size = new System.Drawing.Size(1442, 515);
-            this.reportViewer3.TabIndex = 39;
+            reportDataSource1.Name = "PhieuNhapNgay";
+            reportDataSource1.Value = this.RPPhieuNhapNgayBindingSource;
+            this.reportphieunhapngay.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportphieunhapngay.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuNhapNgayrdlc.rdlc";
+            this.reportphieunhapngay.Location = new System.Drawing.Point(16, 110);
+            this.reportphieunhapngay.Name = "reportphieunhapngay";
+            this.reportphieunhapngay.ServerReport.BearerToken = null;
+            this.reportphieunhapngay.Size = new System.Drawing.Size(1423, 495);
+            this.reportphieunhapngay.TabIndex = 39;
             // 
-            // reportViewer2
+            // reporthoadonthang
             // 
-            reportDataSource17.Name = "DataSetPhieuXuatThang";
-            reportDataSource17.Value = this.RPPhieuXuatMonthBindingSource;
-            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource17);
-            this.reportViewer2.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_PhieuXuatThang.rdlc";
-            this.reportViewer2.Location = new System.Drawing.Point(0, 134);
-            this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(1442, 515);
-            this.reportViewer2.TabIndex = 38;
+            reportDataSource2.Name = "HoaDonThang1";
+            reportDataSource2.Value = this.RPHoaDonThangBindingSource;
+            this.reporthoadonthang.LocalReport.DataSources.Add(reportDataSource2);
+            this.reporthoadonthang.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_HoaDonThang.rdlc";
+            this.reporthoadonthang.Location = new System.Drawing.Point(4, 110);
+            this.reporthoadonthang.Name = "reporthoadonthang";
+            this.reporthoadonthang.ServerReport.BearerToken = null;
+            this.reporthoadonthang.Size = new System.Drawing.Size(1411, 548);
+            this.reporthoadonthang.TabIndex = 38;
             // 
-            // reportViewer1
+            // reporthoadonngay
             // 
-            reportDataSource18.Name = "DataSetHoaDonNgay";
-            reportDataSource18.Value = this.RPHoaDonNgayBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource18);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_HoaDonNgay.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 134);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1442, 515);
-            this.reportViewer1.TabIndex = 37;
+            reportDataSource3.Name = "HoaDonNgay1";
+            reportDataSource3.Value = this.RPHoaDonNgayBindingSource;
+            this.reporthoadonngay.LocalReport.DataSources.Add(reportDataSource3);
+            this.reporthoadonngay.LocalReport.ReportEmbeddedResource = "ThucTapChuyenMon.Report_HoaDonNgay.rdlc";
+            this.reporthoadonngay.Location = new System.Drawing.Point(4, 110);
+            this.reporthoadonngay.Name = "reporthoadonngay";
+            this.reporthoadonngay.ServerReport.BearerToken = null;
+            this.reporthoadonngay.Size = new System.Drawing.Size(1411, 548);
+            this.reporthoadonngay.TabIndex = 37;
             // 
             // label1
             // 
@@ -347,7 +348,7 @@
             this.btnhoadon.IconMarginRight = 0;
             this.btnhoadon.IconRightVisible = false;
             this.btnhoadon.IconRightZoom = 0D;
-            this.btnhoadon.IconVisible = true;
+            this.btnhoadon.IconVisible = false;
             this.btnhoadon.IconZoom = 60D;
             this.btnhoadon.IsTab = false;
             this.btnhoadon.Location = new System.Drawing.Point(272, 16);
@@ -383,17 +384,17 @@
             // 
             // doanhso
             // 
-            chartArea3.Name = "doanh số";
-            this.doanhso.ChartAreas.Add(chartArea3);
+            chartArea1.Name = "doanh số";
+            this.doanhso.ChartAreas.Add(chartArea1);
             this.doanhso.Dock = System.Windows.Forms.DockStyle.Bottom;
-            legend3.Name = "Legend1";
-            this.doanhso.Legends.Add(legend3);
+            legend1.Name = "Legend1";
+            this.doanhso.Legends.Add(legend1);
             this.doanhso.Location = new System.Drawing.Point(0, 114);
             this.doanhso.Name = "doanhso";
-            series3.ChartArea = "doanh số";
-            series3.Legend = "Legend1";
-            series3.Name = "doanh số";
-            this.doanhso.Series.Add(series3);
+            series1.ChartArea = "doanh số";
+            series1.Legend = "Legend1";
+            series1.Name = "doanh số";
+            this.doanhso.Series.Add(series1);
             this.doanhso.Size = new System.Drawing.Size(1442, 549);
             this.doanhso.TabIndex = 26;
             this.doanhso.Text = "Doanh số";
@@ -468,6 +469,10 @@
             // 
             this.RPPhieuNhapThangTableAdapter.ClearBeforeFill = true;
             // 
+            // RPPhieuNhapNgayTableAdapter
+            // 
+            this.RPPhieuNhapNgayTableAdapter.ClearBeforeFill = true;
+            // 
             // RPHoaDonThangTableAdapter
             // 
             this.RPHoaDonThangTableAdapter.ClearBeforeFill = true;
@@ -475,10 +480,6 @@
             // RPHoaDonNgayTableAdapter
             // 
             this.RPHoaDonNgayTableAdapter.ClearBeforeFill = true;
-            // 
-            // RPPhieuNhapNgayTableAdapter
-            // 
-            this.RPPhieuNhapNgayTableAdapter.ClearBeforeFill = true;
             // 
             // page_thongke
             // 
@@ -488,18 +489,18 @@
             this.Name = "page_thongke";
             this.Size = new System.Drawing.Size(1442, 720);
             this.Load += new System.EventHandler(this.page_thongke_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.RPPhieuNhapNgayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhieuNhapNgayDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RPHoaDonNgayBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonNgay1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPHoaDonThangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HoaDonThangDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HoaDonThang1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RPPhieuNhapNgayBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhieuNhapNgay1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPhieuNhapThangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PhieuNhapThangDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPhieuXuatNgayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatNgayDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatNgay1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RPPhieuXuatMonthBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatThangDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RPHoaDonNgayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HoaDonNgayDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PhieuXuatThang1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
@@ -526,29 +527,29 @@
         private System.Windows.Forms.ComboBox cbnam;
         private Bunifu.Framework.UI.BunifuFlatButton viewluong;
         private System.Windows.Forms.DataVisualization.Charting.Chart doanhso;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportphieuxuatthang;
         private System.Windows.Forms.BindingSource RPPhieuXuatMonthBindingSource;
-        private PhieuXuatThangDataSet PhieuXuatThangDataSet;
-        private PhieuXuatThangDataSetTableAdapters.RPPhieuXuatMonthTableAdapter RPPhieuXuatMonthTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
+        private PhieuXuatThang1 PhieuXuatThang1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportphieuxuatngay;
         private System.Windows.Forms.BindingSource RPPhieuXuatNgayBindingSource;
-        private PhieuXuatNgayDataSet PhieuXuatNgayDataSet;
-        private PhieuXuatNgayDataSetTableAdapters.RPPhieuXuatNgayTableAdapter RPPhieuXuatNgayTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportPhieuNhapNgay;
+        private PhieuXuatNgay1 PhieuXuatNgay1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportphieunhapthang;
         private System.Windows.Forms.BindingSource RPPhieuNhapThangBindingSource;
         private PhieuNhapThangDataSet PhieuNhapThangDataSet;
-        private PhieuNhapThangDataSetTableAdapters.RPPhieuNhapThangTableAdapter RPPhieuNhapThangTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportHoaDonThang;
-        private System.Windows.Forms.BindingSource RPHoaDonThangBindingSource;
-        private HoaDonThangDataSet HoaDonThangDataSet;
-        private HoaDonThangDataSetTableAdapters.RPHoaDonThangTableAdapter RPHoaDonThangTableAdapter;
-        private Microsoft.Reporting.WinForms.ReportViewer reportPhieuNhapThang;
-        private System.Windows.Forms.BindingSource RPHoaDonNgayBindingSource;
-        private HoaDonNgayDataSet HoaDonNgayDataSet;
-        private HoaDonNgayDataSetTableAdapters.RPHoaDonNgayTableAdapter RPHoaDonNgayTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer reportphieunhapngay;
         private System.Windows.Forms.BindingSource RPPhieuNhapNgayBindingSource;
-        private PhieuNhapNgayDataSet PhieuNhapNgayDataSet;
-        private PhieuNhapNgayDataSetTableAdapters.RPPhieuNhapNgayTableAdapter RPPhieuNhapNgayTableAdapter;
+        private PhieuNhapNgay1 PhieuNhapNgay1;
+        private Microsoft.Reporting.WinForms.ReportViewer reporthoadonthang;
+        private System.Windows.Forms.BindingSource RPHoaDonThangBindingSource;
+        private HoaDonThang1 HoaDonThang1;
+        private Microsoft.Reporting.WinForms.ReportViewer reporthoadonngay;
+        private System.Windows.Forms.BindingSource RPHoaDonNgayBindingSource;
+        private HoaDonNgay1 HoaDonNgay1;
+        private PhieuXuatThang1TableAdapters.RPPhieuXuatMonthTableAdapter RPPhieuXuatMonthTableAdapter;
+        private PhieuXuatNgay1TableAdapters.RPPhieuXuatNgayTableAdapter RPPhieuXuatNgayTableAdapter;
+        private PhieuNhapThangDataSetTableAdapters.RPPhieuNhapThangTableAdapter RPPhieuNhapThangTableAdapter;
+        private PhieuNhapNgay1TableAdapters.RPPhieuNhapNgayTableAdapter RPPhieuNhapNgayTableAdapter;
+        private HoaDonThang1TableAdapters.RPHoaDonThangTableAdapter RPHoaDonThangTableAdapter;
+        private HoaDonNgay1TableAdapters.RPHoaDonNgayTableAdapter RPHoaDonNgayTableAdapter;
     }
 }

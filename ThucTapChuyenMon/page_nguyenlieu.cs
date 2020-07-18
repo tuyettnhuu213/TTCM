@@ -44,7 +44,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("TenNguyenLieu");
             table.Columns.Add("DonViTinh");
             table.Columns.Add("SoLuong");
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nguyenlieu = quanli.NguyenLieux.ToList();
                 foreach (var item in ds_nguyenlieu)
@@ -59,7 +59,7 @@ namespace ThucTapChuyenMon
         }
         public void loadphieunhap()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 DataTable table = new DataTable();
                 table.Columns.Add("IdPhieuNhap");
@@ -96,7 +96,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("TenNguyenLieu");
             table.Columns.Add("DonViTinh");
             table.Columns.Add("SoLuong");
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nguyenlieu = quanli.NguyenLieux.Where(p => p.SoLuong <= 5).ToList();
                 foreach (var item in ds_nguyenlieu)
@@ -129,7 +129,7 @@ namespace ThucTapChuyenMon
             {
                 if (MessageBox.Show("Bạn có muốn xóa nguyên liệu không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                    using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                     {
                         NguyenLieu nl = quanli.NguyenLieux.FirstOrDefault(p => p.IdNguyenLieu == manl);
                         CTPhieuNhap ds_pn = quanli.CTPhieuNhaps.FirstOrDefault(p => p.IdNguyenLieu == manl);
@@ -149,7 +149,7 @@ namespace ThucTapChuyenMon
         private int loadcanhbao()
         {
             int dem = 0;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nguyenlieu = quanli.NguyenLieux.ToList();
                 foreach (var item in ds_nguyenlieu)
@@ -166,7 +166,7 @@ namespace ThucTapChuyenMon
         }
         public void loadphieuxuat()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 DataTable table = new DataTable();
                 table.Columns.Add("ID");
@@ -259,7 +259,7 @@ namespace ThucTapChuyenMon
             table.Columns.Add("TenNguyenLieu");
             table.Columns.Add("DonViTinh");
             table.Columns.Add("SoLuong");
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nguyenlieu = quanli.NguyenLieux.ToList();
                 foreach (var item in ds_nguyenlieu)
@@ -294,7 +294,7 @@ namespace ThucTapChuyenMon
         {
             if (txtphieunhap.Text == "")
                 loadphieunhap();
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 DataTable table = new DataTable();
                 table.Columns.Add("IdPhieuNhap");

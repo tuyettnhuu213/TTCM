@@ -25,7 +25,7 @@ namespace ThucTapChuyenMon
         }
         public void loadNL()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NguyenLieu> ds_nl = quanli.NguyenLieux.ToList();
                 foreach (var item in ds_nl)
@@ -54,7 +54,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }    
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
 
                 if (cbnguyenlieu.Visible == true)
@@ -117,7 +117,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show("Thêm nguyên liệu để nhập");
                 return;
             }    
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 PhieuNhap pn = new PhieuNhap();
                 quanli.PhieuNhaps.Add(pn);
@@ -168,7 +168,7 @@ namespace ThucTapChuyenMon
         {
             if (cbnguyenlieu.SelectedIndex == -1)
                 return;
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 txtdvt.Enabled = false;
                 txtdvt.Text = quanli.NguyenLieux.FirstOrDefault(p => p.TenNguyenLieu == cbnguyenlieu.SelectedItem.ToString()).DonViTinh;

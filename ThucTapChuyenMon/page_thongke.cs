@@ -25,7 +25,7 @@ namespace ThucTapChuyenMon
             doanhso.ChartAreas["doanh số"].AxisX.Maximum = 12.5;
             doanhso.ChartAreas["doanh số"].AxisX.Minimum = 0;
 
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<HoaDon> ds_hoadon = quanli.HoaDons.ToList();
                 foreach (var item in ds_hoadon)
@@ -61,25 +61,25 @@ namespace ThucTapChuyenMon
             {
                 if (rbngay.Checked)
                 {
-                    this.RPHoaDonNgayTableAdapter.Fill(this.HoaDonNgayDataSet.RPHoaDonNgay, dtngay.Value);
-                    this.reportViewer1.RefreshReport();
-                    reportViewer1.Visible = true;
-                    reportViewer2.Visible = false;
-                    reportViewer3.Visible = false;
-                    reportPhieuNhapNgay.Visible = false;
-                    reportHoaDonThang.Visible = false;
-                    reportPhieuNhapThang.Visible = false;
+                    this.RPHoaDonNgayTableAdapter.Fill(this.HoaDonNgay1.RPHoaDonNgay, dtngay.Value);
+                    this.reporthoadonngay.RefreshReport();
+                    reporthoadonngay.Visible = true;
+                    reporthoadonthang.Visible = false;
+                    reportphieunhapngay.Visible = false;
+                    reportphieunhapthang.Visible = false;
+                    reportphieuxuatngay.Visible = false;
+                    reportphieuxuatthang.Visible = false;         
                 } 
                 if(rbthang.Checked)
                 {
-                    this.RPHoaDonThangTableAdapter.Fill(this.HoaDonThangDataSet.RPHoaDonThang, dtngay.Value.Month,dtngay.Value.Year);
-                    this.reportHoaDonThang.RefreshReport();
-                    reportViewer1.Visible = false;
-                    reportViewer2.Visible = false;
-                    reportViewer3.Visible = false;
-                    reportPhieuNhapNgay.Visible = false;
-                    reportHoaDonThang.Visible = true;
-                    reportPhieuNhapThang.Visible = false;
+                    this.RPHoaDonThangTableAdapter.Fill(this.HoaDonThang1.RPHoaDonThang, dtngay.Value.Month,dtngay.Value.Year);
+                    this.reporthoadonthang.RefreshReport();
+                    reporthoadonngay.Visible = false;
+                    reporthoadonthang.Visible = true;
+                    reportphieunhapngay.Visible = false;
+                    reportphieunhapthang.Visible = false;
+                    reportphieuxuatngay.Visible = false;
+                    reportphieuxuatthang.Visible = false;
                 }    
           
             } 
@@ -88,24 +88,24 @@ namespace ThucTapChuyenMon
                 if(rbthang.Checked)
                 {
                     this.RPPhieuNhapThangTableAdapter.Fill(PhieuNhapThangDataSet.RPPhieuNhapThang, dtngay.Value.Month, dtngay.Value.Year);
-                    this.reportPhieuNhapNgay.RefreshReport();                 
-                    reportViewer1.Visible = false;
-                    reportViewer2.Visible = false;
-                    reportViewer3.Visible = false;
-                    reportPhieuNhapNgay.Visible = true;
-                    reportHoaDonThang.Visible = false;
-                    reportPhieuNhapThang.Visible = false;
+                    this.reportphieunhapthang.RefreshReport();
+                    reporthoadonngay.Visible = false;
+                    reporthoadonthang.Visible = false;
+                    reportphieunhapngay.Visible = false;
+                    reportphieunhapthang.Visible = true;
+                    reportphieuxuatngay.Visible = false;
+                    reportphieuxuatthang.Visible = false;
                 }   
                 if(rbngay.Checked)
                 {
-                    this.RPPhieuNhapNgayTableAdapter.Fill(PhieuNhapNgayDataSet.RPPhieuNhapNgay, dtngay.Value);
-                    this.reportPhieuNhapThang.RefreshReport();
-                    reportViewer1.Visible = false;
-                    reportViewer2.Visible = false;
-                    reportViewer3.Visible = false;
-                    reportPhieuNhapNgay.Visible = false;
-                    reportHoaDonThang.Visible = false;
-                    reportPhieuNhapThang.Visible = true;
+                    this.RPPhieuNhapNgayTableAdapter.Fill(PhieuNhapNgay1.RPPhieuNhapNgay, dtngay.Value);
+                    this.reportphieunhapngay.RefreshReport();
+                    reporthoadonngay.Visible = false;
+                    reporthoadonthang.Visible = false;
+                    reportphieunhapngay.Visible = true;
+                    reportphieunhapthang.Visible = false;
+                    reportphieuxuatngay.Visible = false;
+                    reportphieuxuatthang.Visible = false;
 
                 }    
             }    
@@ -114,25 +114,25 @@ namespace ThucTapChuyenMon
             {
                 if(rbthang.Checked)
                 {
-                    this.RPPhieuXuatMonthTableAdapter.Fill(this.PhieuXuatThangDataSet.RPPhieuXuatMonth, dtngay.Value.Month, dtngay.Value.Year);
-                    this.reportViewer2.RefreshReport();
-                    reportViewer1.Visible = false;
-                    reportViewer2.Visible = true;
-                    reportViewer3.Visible = false;
-                    reportPhieuNhapNgay.Visible = false;
-                    reportHoaDonThang.Visible = false;
-                    reportPhieuNhapThang.Visible = false;
+                    this.RPPhieuXuatMonthTableAdapter.Fill(this.PhieuXuatThang1.RPPhieuXuatMonth, dtngay.Value.Month, dtngay.Value.Year);
+                    this.reportphieuxuatthang.RefreshReport();
+                    reporthoadonngay.Visible = false;
+                    reporthoadonthang.Visible = false;
+                    reportphieunhapngay.Visible = false;
+                    reportphieunhapthang.Visible = false;
+                    reportphieuxuatngay.Visible = false;
+                    reportphieuxuatthang.Visible = true;
                 }
                 if(rbngay.Checked)
                 {
-                    this.RPPhieuXuatNgayTableAdapter.Fill(this.PhieuXuatNgayDataSet.RPPhieuXuatNgay, dtngay.Value);
-                    this.reportViewer3.RefreshReport();
-                    reportViewer1.Visible = false;
-                    reportViewer2.Visible = false;
-                    reportViewer3.Visible = true;
-                    reportPhieuNhapNgay.Visible = false;
-                    reportHoaDonThang.Visible = false;
-                    reportPhieuNhapThang.Visible = false;
+                    this.RPPhieuXuatNgayTableAdapter.Fill(this.PhieuXuatNgay1.RPPhieuXuatNgay, dtngay.Value);
+                    this.reportphieuxuatngay.RefreshReport();
+                    reporthoadonngay.Visible = false;
+                    reporthoadonthang.Visible = false;
+                    reportphieunhapngay.Visible = false;
+                    reportphieunhapthang.Visible = false;
+                    reportphieuxuatngay.Visible = true;
+                    reportphieuxuatthang.Visible = false;
                 }
             }
         }
@@ -157,7 +157,7 @@ namespace ThucTapChuyenMon
             if (cbnam.SelectedIndex == -1)
                 return;
             int nam = int.Parse(cbnam.SelectedItem.ToString());
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 doanhso.Visible = true;
                 List<doanhso_Result> ds_doanhso = quanli.doanhso(nam).ToList();
@@ -169,6 +169,11 @@ namespace ThucTapChuyenMon
         }
 
         private void tabNavigationPage1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPane1_Click(object sender, EventArgs e)
         {
 
         }

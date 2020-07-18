@@ -38,7 +38,7 @@ namespace ThucTapChuyenMon
         }
         public void loadnhanvien()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<NhanVien> ds_nhanvien = quanli.NhanViens.ToList();
                 DataTable table = new DataTable();
@@ -74,7 +74,7 @@ namespace ThucTapChuyenMon
         }
         public void loadchucvu()
         {
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 List<ChucVu> ds_chucvu = quanli.ChucVus.ToList();
                 DataTable table = new DataTable();
@@ -114,7 +114,7 @@ namespace ThucTapChuyenMon
             }
             if (e.ColumnIndex == 1)
             {
-                using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                 {
                     string tendangnhap = dgvnhanvien.Rows[e.RowIndex].Cells[2].Value.ToString();
 
@@ -170,7 +170,7 @@ namespace ThucTapChuyenMon
                         return;
                     }
 
-                    using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+                    using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
                     {
                         ChucVu cv = new ChucVu();
                         cv.TenChucVu = txttencv.Text;
@@ -241,7 +241,7 @@ namespace ThucTapChuyenMon
                 MessageBox.Show("yêu cầu nhập lương chức vụ !");
                 return;
             }              
-            using (THUCTAPCHUYENMONEntities quanli = new THUCTAPCHUYENMONEntities())
+            using (DatabaseQLTSEntities quanli = new DatabaseQLTSEntities())
             {
                 ChucVu cv = quanli.ChucVus.FirstOrDefault(p => p.IdChucVu == machucvu);
                 cv.TenChucVu = txttencv.Text;

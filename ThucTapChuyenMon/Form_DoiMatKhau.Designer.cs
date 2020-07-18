@@ -238,6 +238,7 @@
             this.Name = "Form_DoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_DoiMatKhau";
+            this.Load += new System.EventHandler(this.Form_DoiMatKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loi)).EndInit();
             this.ResumeLayout(false);
