@@ -31,7 +31,8 @@ Các chức năng đã hoàn thành bao gồm:
 - Ấn Yes để tiến hành cài đặt
 - Ấn finish sẽ hiển thị ứng dụng QLTS trên màn hình Desktop
 ## Hướng dẫn sử dụng
-- Đăng nhập (tài khoản admin_ tên tài khoản: "admin" _ mật khẩu: "123")
+- Đăng nhập:
+- (tài khoản admin: tên tài khoản: "admin" _ mật khẩu: "123"; tài khoản nhân viên: "banhang" _ mật khẩu: "123")
 - Chọn các chức năng cần sử dụng
 - Sau khi sử dụng, ấn nút Cài đặt ở góc phải trên cùng của ứng dụng, chọn Đăng xuất, chọn Thoát
 ## Xin cám ơn!
