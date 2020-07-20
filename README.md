@@ -21,6 +21,8 @@ Các chức năng đã hoàn thành bao gồm:
 -	Thống kê doanh thu, doanh số, xuất report
 -	Tìm kiếm nâng cao
 - Xuất file cài đặt (QLTS.msi)
+## Phần 3: Các chức năng chưa hoàn thành
+- Chưa thêm hạn sử dụng cho nguyên liệu, thông báo hết hạn sử dụng nguyên liệu
 ## Hướng dẫn cài đặt
 - Mở folder Setup, mở file QLTS.msi
 - Sau khi hiện hộp thoại, ấn Next
