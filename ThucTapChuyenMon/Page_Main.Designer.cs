@@ -30,26 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlbutton = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.btnquanlikho = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnkhachhang = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnthongke = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnnhanvien = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnthucdon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btntrangchu = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.pnlbutton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +62,59 @@
             this.panel1.Size = new System.Drawing.Size(1442, 80);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.AutoSize = false;
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripDropDownButton1});
+            this.statusStrip1.Location = new System.Drawing.Point(1309, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(133, 80);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "Tài khoản";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.AutoSize = false;
+            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.đổiMậtKhẩuToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem,
+            this.đăngXuấtToolStripMenuItem1});
+            this.toolStripDropDownButton1.Image = global::ThucTapChuyenMon.Properties.Resources.cogwheel1;
+            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Black;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.RightToLeftAutoMirrorImage = true;
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(70, 78);
+            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
+            // 
+            // đổiMậtKhẩuToolStripMenuItem
+            // 
+            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.đổiMậtKhẩuToolStripMenuItem.Text = "Thông tin tài khoản";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
+            // đăngXuấtToolStripMenuItem1
+            // 
+            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(220, 26);
+            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
             // 
             // label1
             // 
@@ -84,44 +137,9 @@
             this.pnlbutton.Controls.Add(this.btntrangchu);
             this.pnlbutton.Location = new System.Drawing.Point(1, 798);
             this.pnlbutton.Name = "pnlbutton";
-            this.pnlbutton.Size = new System.Drawing.Size(1364, 101);
+            this.pnlbutton.Size = new System.Drawing.Size(1442, 101);
             this.pnlbutton.TabIndex = 1;
             this.pnlbutton.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlbutton_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.PeachPuff;
-            this.panel2.Location = new System.Drawing.Point(1, 78);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1442, 720);
-            this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // error
-            // 
-            this.error.ContainerControl = this;
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.BackColor = System.Drawing.Color.LightPink;
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.OwnerDraw = true;
-            this.toolTip1.ShowAlways = true;
-            this.toolTip1.StripAmpersands = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.AutoSize = false;
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripDropDownButton1});
-            this.statusStrip1.Location = new System.Drawing.Point(1309, 0);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(133, 80);
-            this.statusStrip1.TabIndex = 5;
-            this.statusStrip1.Text = "Tài khoản";
             // 
             // btnquanlikho
             // 
@@ -339,45 +357,27 @@
             this.toolTip1.SetToolTip(this.btntrangchu, "Trang chủ bán hàng");
             this.btntrangchu.Click += new System.EventHandler(this.btntrangchu_Click);
             // 
-            // toolStripDropDownButton1
+            // panel2
             // 
-            this.toolStripDropDownButton1.AutoSize = false;
-            this.toolStripDropDownButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đổiMậtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem1});
-            this.toolStripDropDownButton1.Image = global::ThucTapChuyenMon.Properties.Resources.cogwheel1;
-            this.toolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Black;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(70, 56);
-            this.toolStripDropDownButton1.Text = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripDropDownButton1.Click += new System.EventHandler(this.toolStripDropDownButton1_Click);
+            this.panel2.BackColor = System.Drawing.Color.PeachPuff;
+            this.panel2.Location = new System.Drawing.Point(1, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1442, 720);
+            this.panel2.TabIndex = 2;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // đổiMậtKhẩuToolStripMenuItem
+            // error
             // 
-            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.đổiMậtKhẩuToolStripMenuItem.Text = "Thông tin tài khoản";
-            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            this.error.ContainerControl = this;
             // 
-            // đăngXuấtToolStripMenuItem
+            // toolTip1
             // 
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.đăngXuấtToolStripMenuItem.Text = "Đổi mật khẩu";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-            // 
-            // đăngXuấtToolStripMenuItem1
-            // 
-            this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.đăngXuấtToolStripMenuItem1.Text = "Đăng xuất";
-            this.đăngXuấtToolStripMenuItem1.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem1_Click);
+            this.toolTip1.BackColor = System.Drawing.Color.LightPink;
+            this.toolTip1.IsBalloon = true;
+            this.toolTip1.OwnerDraw = true;
+            this.toolTip1.ShowAlways = true;
+            this.toolTip1.StripAmpersands = true;
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // Page_Main
             // 
@@ -396,10 +396,10 @@
             this.Load += new System.EventHandler(this.Page_Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pnlbutton.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.pnlbutton.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
