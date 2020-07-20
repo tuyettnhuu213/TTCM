@@ -32,4 +32,4 @@ Các chức năng đã hoàn thành bao gồm:
 - Đăng nhập (tài khoản admin_ tên tài khoản: "admin" _ mật khẩu: "123")
 - Chọn các chức năng cần sử dụng
 - Sau khi sử dụng, ấn nút Cài đặt ở góc phải trên cùng của ứng dụng, chọn Đăng xuất, chọn Thoát
-Xin cám ơn!
+## Xin cám ơn!
